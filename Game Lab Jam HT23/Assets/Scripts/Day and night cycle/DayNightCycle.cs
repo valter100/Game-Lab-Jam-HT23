@@ -67,6 +67,7 @@ public class DayNightCycle : MonoBehaviour
             if (!night)
             {
                 text.enabled = false;
+                crewScript.DisableCrewText();
                 night = true;
 
                 SwitchToNightCamera();
@@ -94,6 +95,7 @@ public class DayNightCycle : MonoBehaviour
         {
             SwitchToDayCamera();
             ShowNightText("Night: " + (currentNight + 2).ToString());
+            
         }
 
         dayTime -= Time.deltaTime;
@@ -106,17 +108,17 @@ public class DayNightCycle : MonoBehaviour
 
     public void ShowNightText(string currentNight)
     {
+        
         text.enabled = true;
         text.text = (currentNight);
 
+        crewScript.PrintCrew();
         dayTime = dayTimeReset;
+
         night = false;
     }
 
-    //public void PrintCrew()
-    //{
-    //    text.text += "\n" + ""
-    //}
+
 
     public void SwitchToNightCamera()
     {
