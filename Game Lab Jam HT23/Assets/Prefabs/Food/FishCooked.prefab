@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3181430011934041759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1006992721167488613}
+  - component: {fileID: 8468259437080076710}
+  m_Layer: 0
+  m_Name: FishCooked
+  m_TagString: Food
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1006992721167488613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181430011934041759}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.08491577, y: -0.11020232, z: 0.047317415}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6511795338953508862}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8468259437080076710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181430011934041759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2cf94423141954baf2041b67d3f85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 0.04
+  bounceMultiplier: 0.0001
+--- !u!1001 &6817558676823117314
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1006992721167488613}
+    m_Modifications:
+    - target: {fileID: 342940025030363644, guid: c569342cc74693b4f9b24b7dc838f4ff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 342940025030363644, guid: c569342cc74693b4f9b24b7dc838f4ff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 342940025030363644, guid: c569342cc74693b4f9b24b7dc838f4ff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 342940025030363644, guid: c569342cc74693b4f9b24b7dc838f4ff,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 342940025030363644, guid: c569342cc74693b4f9b24b7dc838f4ff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 342940025030363644, guid: c569342cc74693b4f9b24b7dc838f4ff,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 342940025030363644, guid: c569342cc74693b4f9b24b7dc838f4ff,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 342940025030363644, guid: c569342cc74693b4f9b24b7dc838f4ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 342940025030363644, guid: c569342cc74693b4f9b24b7dc838f4ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 342940025030363644, guid: c569342cc74693b4f9b24b7dc838f4ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119582724416508742, guid: c569342cc74693b4f9b24b7dc838f4ff,
+        type: 3}
+      propertyPath: m_Name
+      value: FishFilletCooked
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8008315228817195567, guid: c569342cc74693b4f9b24b7dc838f4ff, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c569342cc74693b4f9b24b7dc838f4ff, type: 3}
+--- !u!4 &6511795338953508862 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 342940025030363644, guid: c569342cc74693b4f9b24b7dc838f4ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 6817558676823117314}
+  m_PrefabAsset: {fileID: 0}
