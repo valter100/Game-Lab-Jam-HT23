@@ -66,12 +66,4 @@ public class RatMovement : MonoBehaviour
             anim.SetBool("IsJumping", true);
 
     }
-
-    //public void Jump(InputAction.CallbackContext context)
-    //{
-    //    if (context.performed && !movementLocked && !actionLocked && !dead)
-    //        movement.Jump();
-
-    //    if (context.canceled.)
-    //}
 }
