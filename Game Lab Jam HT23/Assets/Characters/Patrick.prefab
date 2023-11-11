@@ -5837,7 +5837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 3950fa17198a41048ba4724b043ddfb1,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -5848,7 +5848,27 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 96cd10f1-4f5b-427e-9533-6f4a41fa1d92
+    m_ActionName: Patrick/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4717214351934785460}
+        m_TargetAssemblyTypeName: RatMovement, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6e757e75-8659-455b-9d4e-b294fa6f4e29
+    m_ActionName: Patrick/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Patrick
@@ -5935,11 +5955,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24cacfb1f33198e4d9af920606823e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infectionRadius: 0
+  infectionRate: 1
   fleas: 0
   foodCollected: 0
-  infectionRadius: 0
   timeBetweenFleaPickup: 0
   fleasSystem: {fileID: 0}
+  crewScript: {fileID: 0}
 --- !u!1 &8697326814300614227
 GameObject:
   m_ObjectHideFlags: 0
