@@ -18,6 +18,7 @@ public class CrewMate : MonoBehaviour
     Color orignialColor;
     Color finalColor = new Color(129f, 255f, 0f , 255);
 
+    [SerializeField] AudioSource audioSource;
 
     public float InfectionLevel
     {
@@ -41,8 +42,13 @@ public class CrewMate : MonoBehaviour
     void Update()
     {
         material.color = Color.Lerp(Color.white, Color.green, infectionLevel/100f);
+        audioSource.Play();
     }
-
+    public void NPCTalk(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+        material.color = Color.Lerp(Color.white, Color.green, infectionLevel/100f);
+    }
     public void IncreaseInfection(float infection)
     {
         if (infectionCooldown <= 0)
