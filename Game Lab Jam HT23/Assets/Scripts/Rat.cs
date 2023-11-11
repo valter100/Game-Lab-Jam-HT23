@@ -5,10 +5,8 @@ using UnityEngine;
 public class Rat : MonoBehaviour
 {
 
-    [SerializeField] float infectionRadius;
-    [SerializeField] float infectionRate = 1;
-
-
+    [SerializeField] float infectionRadius = 1f;
+    [SerializeField] float infectionRate = 1f;
 
     [SerializeField] int fleas;
     [SerializeField] int foodCollected;
@@ -30,7 +28,8 @@ public class Rat : MonoBehaviour
     {
         for (int i = 0; i < crewScript.CrewMates.Length; i++)
         {
-            float distance = Vector3.Distance(transform.position, crewScript.CrewMates[i].transform.position);
+            float distance = Vector3.Distance(transform.position, crewScript.CrewMates[i].gameObject.transform.position);
+
             if (distance < (infectionRadius/2))
             {
                 crewScript.CrewMates[i].IncreaseInfection(infectionRate * 2);

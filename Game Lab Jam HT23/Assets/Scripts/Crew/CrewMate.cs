@@ -13,35 +13,16 @@ public class CrewMate : MonoBehaviour
     float infectionCooldown = 0.2f;
     float infectionCooldownReset = 0.2f;
 
-    public int maxDaysSick { get; private set; } = 0;
 
     public float InfectionLevel
     {
         get { return infectionLevel; }
     }
 
-    void Start()
-    {
-        maxDaysSick = Random.Range(2, 5);
-    }
-
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("InfectionRadius"))
-        {
-            
-        }
-    }
-
-    public bool CheckIfAlive()
-    {
-        return alive;
     }
 
     public void IncreaseInfection(float infection)
