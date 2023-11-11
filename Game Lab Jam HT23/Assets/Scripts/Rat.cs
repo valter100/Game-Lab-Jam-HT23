@@ -14,6 +14,7 @@ public class Rat : MonoBehaviour
     [SerializeField] float timeBetweenFleaPickup;
     float timeSinceLastFleaPickup;
     [SerializeField] ParticleSystem fleasSystem;
+    [SerializeField] ParticleSystem radiusSystem;
     [SerializeField] Crew crewScript;
 
 

@@ -58,7 +58,7 @@ public class DayNightCycle : MonoBehaviour
         }
         ratCameraLocation = rat.transform.position;
 
-
+        RenderSettings.skybox = daySkybox;
         SwitchToDayCamera();
     }
 
