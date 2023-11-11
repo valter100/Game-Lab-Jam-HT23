@@ -133,7 +133,7 @@ public class DayNightCycle : MonoBehaviour
     public void SwitchToNightCamera()
     {
         rat.transform.position = ratCameraLocation;
-        nightCamera.transform.position = ratCameraLocation;
+        //nightCamera.transform.position = ratCameraLocation;
         nightCamera.enabled = true;
         dayCamera.enabled = false;
     }
