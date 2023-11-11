@@ -976,12 +976,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 414871968}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &1417868113 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 7630773498345988639, guid: 20e8f2af899b8974f94a860b6f18722a,
-    type: 3}
-  m_PrefabInstance: {fileID: 414871968}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1574182500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,7 +1279,7 @@ MonoBehaviour:
   text: {fileID: 2136791709}
   dayTime: 2
   dayCamera: {fileID: 143768615}
-  nightCamera: {fileID: 1417868113}
+  nightCamera: {fileID: 0}
   food: []
   spawnPoints: []
   crewScript: {fileID: 1982918543}

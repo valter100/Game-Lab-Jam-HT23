@@ -5730,6 +5730,59 @@ Transform:
   - {fileID: 6455660590684526735}
   m_Father: {fileID: 633947557330908846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8215558895549027915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6678680222705864538}
+  - component: {fileID: 7825208336861284371}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6678680222705864538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215558895549027915}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2963389547669870254}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7825208336861284371
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215558895549027915}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.7059648, y: 1.5667343, z: 8.563847}
+  m_Center: {x: -0, y: 0.6406021, z: 0}
 --- !u!1 &8547545157547084299
 GameObject:
   m_ObjectHideFlags: 0
@@ -5767,6 +5820,7 @@ Transform:
   - {fileID: 8959441041714163626}
   - {fileID: 7068200736560759754}
   - {fileID: 5802791964028041022}
+  - {fileID: 6678680222705864538}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5359123011815378556
@@ -5813,8 +5867,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  rotationSpeed: 120
+  jumpForce: 225
+  isGrounded: 0
   anim: {fileID: 7168980853853631776}
-  rat: {fileID: 0}
+  groundCheckBox: {fileID: 7825208336861284371}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!54 &647190426555880226
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5861,8 +5921,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.6125264, y: 5.126446, z: 11.244772}
-  m_Center: {x: 0.061343618, y: 2.063223, z: -2.999887}
+  m_Size: {x: 4.6125264, y: 3.9468956, z: 11.244772}
+  m_Center: {x: 0.061343618, y: 2.652998, z: -2.999887}
 --- !u!114 &4731629426349896239
 MonoBehaviour:
   m_ObjectHideFlags: 0
