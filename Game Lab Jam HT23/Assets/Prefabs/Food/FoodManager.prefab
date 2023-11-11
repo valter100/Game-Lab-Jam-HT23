@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7932599804597277911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8237448456112827729}
+  - component: {fileID: 5075630278882532077}
+  m_Layer: 0
+  m_Name: FoodManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8237448456112827729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932599804597277911}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5075630278882532077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932599804597277911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e31797d9d49331479d1ab15b018e6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodPrefabs:
+  - {fileID: 7224516686894979103, guid: 9f7fb6301634ce941841df6521b17165, type: 3}
+  - {fileID: 1157384537779356221, guid: 09fa82b326e0db140ab3aedaf741100c, type: 3}
+  - {fileID: 6433288682549040280, guid: fb94b03435701cf42a4f7eedc6318c9f, type: 3}
+  - {fileID: 5455375304532660971, guid: 9b9b38ff094a8d44f899329c3079e295, type: 3}
+  - {fileID: 6161639149181803511, guid: 25b129c95d1cf2b41ae6694537be2a51, type: 3}
+  - {fileID: 7523987389957107136, guid: a5d59532603e2de4ea81de48faf2f82e, type: 3}
+  - {fileID: 3181430011934041759, guid: a9e4628702ed41342b74bd414106b01d, type: 3}
+  - {fileID: 4665775275348178463, guid: 66f48ce3faa1a7a4ab630c54edffd0ac, type: 3}
+  - {fileID: 6494925939321981643, guid: 6e311456c6e836d4fb5035a590d8862a, type: 3}
+  foodSpawnPoints: []

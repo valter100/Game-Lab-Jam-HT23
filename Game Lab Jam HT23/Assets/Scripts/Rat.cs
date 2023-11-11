@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rat : MonoBehaviour
 {
     [SerializeField] int fleas;
-    [SerializeField] int requiredFood;
+    [SerializeField] int foodCollected;
     [SerializeField] int infectionRadius;
     [SerializeField] float timeBetweenFleaPickup;
     float timeSinceLastFleaPickup;
@@ -37,6 +37,15 @@ public class Rat : MonoBehaviour
         {
             timeSinceLastFleaPickup = 0;
             PickupFlea();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Food"))
+        {
+            other.GetComponent<FoodCollectible>().CollectFood();
+            foodCollected++;
         }
     }
 }
