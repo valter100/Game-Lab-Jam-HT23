@@ -19,8 +19,9 @@ public class Rat : MonoBehaviour
 
     [SerializeField] float distanceFlea = 10f;
     [SerializeField] AudioSource pickupSource;
+    [SerializeField] Transform hatPosition;
     float currentDistanceFlee = 0f;
-
+    GameObject currentHat;
     Vector3 lastFramesPosition;
 
     public float InfectionRadius
@@ -57,6 +58,11 @@ public class Rat : MonoBehaviour
         }
 
         CheckFlea();
+
+        if(currentHat)
+        {
+            currentHat.gameObject.transform.position = hatPosition.position;
+        }
     }
 
     public void PickupFlea()
@@ -86,5 +92,12 @@ public class Rat : MonoBehaviour
             pickupSource.Play();
             foodCollected++;
         }
+    }
+
+    public void EquipHat(Hat newHat)
+    {
+        GameObject SpawnedHat = Instantiate(newHat.gameObject, hatPosition.position, Quaternion.identity);
+        Destroy(SpawnedHat.GetComponent<Hat>());
+        currentHat = SpawnedHat;
     }
 }
