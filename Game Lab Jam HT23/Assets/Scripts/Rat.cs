@@ -40,7 +40,10 @@ public class Rat : MonoBehaviour
     void Start()
     {
         lastFramesPosition = transform.position;
-        fleas = infectionRadius;
+        infectionRadius = fleas;
+        infectionRate = fleas;
+        var shape = radiusSystem.shape;
+        shape.radius = infectionRadius;
     }
 
     // Fleas increases when rat is walking
@@ -50,6 +53,10 @@ public class Rat : MonoBehaviour
     {
         for (int i = 0; i < crewScript.CrewMates.Length; i++)
         {
+            if ((crewScript.CrewMates[i].GetComponent<Collider>().bounds.size.y + transform.position.y) < crewScript.CrewMates[i].transform.position.y)
+            {
+                continue;
+            }
             float distance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(crewScript.CrewMates[i].transform.position.x, 0, crewScript.CrewMates[i].transform.position.z));
             if (distance < (infectionRadius / 2))
             {
@@ -66,13 +73,12 @@ public class Rat : MonoBehaviour
 
     public void PickupFlea()
     {
-        fleas++;
+        fleas+= 0.5f;
         infectionRadius = fleas;
         infectionRate = fleas;
         var shape = radiusSystem.shape;
-
         shape.radius = infectionRadius;
-        Debug.Log(shape.radius);
+
         var emission = fleaSystem.emission;
         emission.rateOverTime = fleas * 4f;
     }
