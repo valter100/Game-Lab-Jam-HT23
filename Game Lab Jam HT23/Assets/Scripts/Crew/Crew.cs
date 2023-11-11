@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Crew : MonoBehaviour
 {
-    [SerializeField] int numberOfPeople = 40;
-    CrewMate[] crewMates;
+    int alivePeople;
+    [SerializeField] CrewMate[] crewMates;
     int valueOfPeople = 4;
     int deadPeople = 0;
     int infectedPeople = 0;
@@ -16,7 +16,6 @@ public class Crew : MonoBehaviour
     
 
     [SerializeField] TextMeshProUGUI text;
-    [SerializeField] Vector3[] spawnLocations;
 
     public int DeadPeople
     { 
@@ -29,16 +28,12 @@ public class Crew : MonoBehaviour
 
     public int NumberOfPeople
     {
-        get { return numberOfPeople; }
+        get { return alivePeople; }
     }
 
     void Start()
     {
-        crewMates = new CrewMate[numberOfPeople / valueOfPeople];
-        //for (int i = 0; i < crewMates.Length; i++)
-        //{
-        //    crewMates[i] = Instantiate();
-        //}
+        alivePeople = crewMates.Length;
     }
 
     void Update()
@@ -49,11 +44,36 @@ public class Crew : MonoBehaviour
     public void PrintCrew()
     {
         text.enabled = true;
-        text.text = "Number of alive crewmates: " + (numberOfPeople - (infectedPeople + deadPeople)) + "\n" + "Number of infected crewmates: " + infectedPeople + "\n" + "Number of dead crewmates: " + deadPeople;
+        text.text = "Number of alive crewmates: " + (alivePeople - (infectedPeople + deadPeople)) + "\n" + "Number of infected crewmates: " + infectedPeople + "\n" + "Number of dead crewmates: " + deadPeople;
     }
 
     public void DisableCrewText()
     {
         text.enabled = false;
+    }
+
+    public void HandleCrew()
+    {
+        deadPeople = 0;
+        infectedPeople = 0;
+        for (int i = 0; i < crewMates.Length; i++)
+        {
+            if (crewMates[i].State == HealthState.dead)
+            {
+                deadPeople++;
+                continue;
+            }
+            if (crewMates[i].CheckIfDead())
+            {
+                deadPeople++;
+                return;
+            }
+
+            if (crewMates[i].InfectionLevel >= 100)
+            {
+                infectedPeople++;
+                crewMates[i].daysSick++;
+            }
+        }
     }
 }

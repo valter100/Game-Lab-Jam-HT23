@@ -101,7 +101,7 @@ public class DayNightCycle : MonoBehaviour
             ShowNightText("VICTORY!!");
             return;
         }
-        // Makes sure this only happens once per night
+        // Makes sure this only happens once per day
         if (night)
         {
             SwitchToDayCamera();
@@ -122,6 +122,7 @@ public class DayNightCycle : MonoBehaviour
         text.text = (currentNight);
 
         crewScript.PrintCrew();
+        crewScript.HandleCrew();
         dayTime = dayTimeReset;
 
         night = false;
