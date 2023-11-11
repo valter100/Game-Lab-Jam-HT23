@@ -1,6 +1,11 @@
 fileFormatVersion: 2
-guid: 0ed677062fe80e645b990863ab31ebce
+<<<<<<<< HEAD:Game Lab Jam HT23/Assets/StylizedWater2/Quickstart.pdf.meta
+guid: 46e066caca609de468008fb36dbe0a0a
 DefaultImporter:
+========
+guid: ed04501db9e74454687fc72f7565e6d8
+PrefabImporter:
+>>>>>>>> Martin:Game Lab Jam HT23/Assets/PolygonFantasyCharacters/AnimatedCharacters/CrewMembermale-PickingUp Variant.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

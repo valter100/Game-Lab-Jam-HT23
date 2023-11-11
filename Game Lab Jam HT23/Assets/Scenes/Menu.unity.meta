@@ -1,6 +1,11 @@
 fileFormatVersion: 2
-guid: dbd26dc31640d084dabbe5387707852c
+<<<<<<<< HEAD:Game Lab Jam HT23/Assets/Scenes/Menu.unity.meta
+guid: 4d1265de8d7feea469bf5d551504e593
 DefaultImporter:
+========
+guid: f460127a911e17e4798a10ff97d29f47
+PrefabImporter:
+>>>>>>>> Martin:Game Lab Jam HT23/Assets/PolygonFantasyCharacters/AnimatedCharacters/CrewMemberFemale-SittingDown Variant.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
