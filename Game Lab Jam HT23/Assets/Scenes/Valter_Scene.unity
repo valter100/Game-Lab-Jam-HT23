@@ -1557,6 +1557,7 @@ MonoBehaviour:
   crewScript: {fileID: 1982918543}
   rat: {fileID: 1399682095}
   slider: {fileID: 0}
+  musicManager: {fileID: 0}
 --- !u!4 &1982918542
 Transform:
   m_ObjectHideFlags: 0
