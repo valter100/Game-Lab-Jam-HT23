@@ -5,10 +5,10 @@ using UnityEngine;
 public class Rat : MonoBehaviour
 {
 
-    [SerializeField] float infectionRadius = 5f;
-    [SerializeField] float infectionRate = 5f;
+    [SerializeField] float infectionRadius = 1f;
+    [SerializeField] float infectionRate = 1f;
 
-    [SerializeField] float fleas;
+    [SerializeField] float fleas = 1f;
     [SerializeField] int foodCollected;
 
     [SerializeField] float timeBetweenFleaPickup;
@@ -67,6 +67,7 @@ public class Rat : MonoBehaviour
     {
         fleas++;
         infectionRadius = fleas;
+        infectionRate = fleas;
         var shape = radiusSystem.shape;
 
         shape.radius = infectionRadius;
