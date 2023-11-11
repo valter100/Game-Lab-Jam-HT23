@@ -55,3 +55,5 @@ MonoBehaviour:
   - {fileID: 4665775275348178463, guid: 66f48ce3faa1a7a4ab630c54edffd0ac, type: 3}
   - {fileID: 6494925939321981643, guid: 6e311456c6e836d4fb5035a590d8862a, type: 3}
   foodSpawnPoints: []
+  foodSlider: {fileID: 0}
+  startAmountOfFood: 5

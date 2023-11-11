@@ -8,11 +8,24 @@ public class FoodManager : MonoBehaviour
     [SerializeField] GameObject[] foodSpawnPoints;
     [SerializeField] Slider foodSlider;
     private int maxAvailableFood = 0; //food available to pick up in current level/day
+    [SerializeField] public int startAmountOfFood;
+    [Range(0, 1)]
+    [SerializeField] float difficulty;
+
+    public static FoodManager instance;
 
     private void Awake()
     {
+        if (instance == null)
+            instance = this;
+
         GetSpawnPoints();
-        SpawnFood(0.2f);
+        StartDay();
+    }
+
+    public void StartDay()
+    {
+        SpawnFood(startAmountOfFood, 0.4f);
         ResetFoodSlider();
     }
 
@@ -22,21 +35,32 @@ public class FoodManager : MonoBehaviour
         Array.Reverse(foodSpawnPoints);
     }
 
-    public void SpawnFood(float difficulty)
+    public void SpawnFood(int amount, float difficulty)
     {
         difficulty = Mathf.Clamp01(difficulty);
- 
+
         int maxSpawnLength = (int)(foodSpawnPoints.Length * difficulty);
+        int minSpawnLength = (int)(foodSpawnPoints.Length * (difficulty * 0.5f));
 
-        //Random food
-        int rf = UnityEngine.Random.Range(0, foodPrefabs.Length);
-        //Random spawnpoint
-        int rs = UnityEngine.Random.Range(0, maxSpawnLength);
+        int?[] takenSpots = new int?[foodSpawnPoints.Length];
 
-        Instantiate(foodPrefabs[rf], foodSpawnPoints[rs].transform.position, Quaternion.identity);
-        maxAvailableFood++;
+        for (int i = 0; i < amount; ++i)
+        {
+            //Random food
+            int rf = UnityEngine.Random.Range(0, foodPrefabs.Length);
+            //Random spawnpoint
+            int rs = UnityEngine.Random.Range(minSpawnLength, maxSpawnLength);
+
+            while (takenSpots[rs] != null)
+            {
+                rs++;
+            }
+
+            takenSpots[rs] = 1;
+            Instantiate(foodPrefabs[rf], foodSpawnPoints[rs].transform.position, Quaternion.identity);
+            maxAvailableFood++;
+        }
     }
-
     public void UpdateSliderOnFoodPickup() //increase value of slider when food is picked up
     {
         foodSlider.value++;
