@@ -107,11 +107,6 @@ public class DayNightCycle : MonoBehaviour
             Win();
             return;
         }
-        if(crewScript.DeadPeople > crewScript.CrewMates.Length/1.5f)
-        {
-            ShowNightText("YA LOST BITCH");
-            return;
-        }
         // Makes sure this only happens once per night
         if (night)
         {
