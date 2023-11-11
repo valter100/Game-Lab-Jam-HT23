@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DayNightCycle : MonoBehaviour
 {
+    [SerializeField] Slider slider;
     [SerializeField] Night[] nights;
     [SerializeField] int amountOfNights;
 
@@ -53,7 +55,7 @@ public class DayNightCycle : MonoBehaviour
         }
         ratCameraLocation = rat.transform.position;
 
-
+        slider.maxValue = amountOfNights;
         SwitchToDayCamera();
     }
 
@@ -114,6 +116,8 @@ public class DayNightCycle : MonoBehaviour
         {
             currentNight++;
         }
+
+        slider.value = currentNight;
     }
 
     public void ShowNightText(string currentNight)
@@ -135,11 +139,14 @@ public class DayNightCycle : MonoBehaviour
         nightCamera.transform.position = ratCameraLocation;
         nightCamera.enabled = true;
         dayCamera.enabled = false;
+        slider.enabled = false;
     }
 
     public void SwitchToDayCamera()
     {
         dayCamera.enabled = true;
         nightCamera.enabled = false;
+
+        slider.enabled = true;
     }
 }
