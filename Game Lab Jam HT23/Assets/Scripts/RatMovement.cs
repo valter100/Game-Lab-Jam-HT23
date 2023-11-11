@@ -32,7 +32,7 @@ public class RatMovement : MonoBehaviour
         {
             transform.position += movementValue * speed * Time.deltaTime;
             //transform.position += Vector3.forward * speed * Time.deltaTime;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movementValue), 0.25f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movementValue), 0.025f);
             anim.SetBool("IsMoving", true);
 
         }

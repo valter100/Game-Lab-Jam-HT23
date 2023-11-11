@@ -105,6 +105,7 @@ public class DayNightCycle : MonoBehaviour
         if (night)
         {
             SwitchToDayCamera();
+            crewScript.HandleCrew();
             ShowNightText("Night: " + (currentNight + 2).ToString());
         }
 
@@ -133,7 +134,6 @@ public class DayNightCycle : MonoBehaviour
     public void SwitchToNightCamera()
     {
         rat.transform.position = ratCameraLocation;
-        nightCamera.transform.position = ratCameraLocation;
         nightCamera.enabled = true;
         dayCamera.enabled = false;
     }

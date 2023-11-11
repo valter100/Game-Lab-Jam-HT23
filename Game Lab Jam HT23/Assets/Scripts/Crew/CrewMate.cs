@@ -6,33 +6,19 @@ using static Crew;
 public class CrewMate : MonoBehaviour
 {
 
-    Crew.HealthState state = Crew.HealthState.healthy;
+    public bool alive = true;
 
-    public int daysSick { get; set; } = 0;
+    [SerializeField] float infectionLevel = 0;
 
-    [SerializeField] int infectionLevel = 0;
+    float infectionCooldown = 0.2f;
+    float infectionCooldownReset = 0.2f;
 
     public int maxDaysSick { get; private set; } = 0;
 
-    public int InfectionLevel
+    public float InfectionLevel
     {
         get { return infectionLevel; }
     }
-
-    public Crew.HealthState State 
-    { 
-        get 
-        { 
-            return state; 
-        } 
-        set
-        {
-            state = value;
-        }
-    }
-
-
-
 
     void Start()
     {
@@ -49,17 +35,32 @@ public class CrewMate : MonoBehaviour
     {
         if (other.CompareTag("InfectionRadius"))
         {
-            state = Crew.HealthState.infected;
+            
         }
     }
 
-    public bool CheckIfDead()
+    public bool CheckIfAlive()
     {
-        if (maxDaysSick >= daysSick)
+        return alive;
+    }
+
+    public void IncreaseInfection(float infection)
+    {
+        if (infectionCooldown <= 0)
         {
-            State = HealthState.dead;
-            return true;
+            infectionLevel += infection;
+            infectionCooldown = infectionCooldownReset;
         }
-        return false;
+        else
+        {
+            infectionCooldown -= Time.deltaTime;
+        }
+
+        if (infectionLevel >= 100)
+        {
+            alive = false;
+        }
+
+        
     }
 }

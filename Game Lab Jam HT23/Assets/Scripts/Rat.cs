@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
+
+    [SerializeField] float infectionRadius;
+    [SerializeField] float infectionRate = 1;
+
+
+
     [SerializeField] int fleas;
     [SerializeField] int foodCollected;
-    [SerializeField] int infectionRadius;
+
     [SerializeField] float timeBetweenFleaPickup;
     float timeSinceLastFleaPickup;
     [SerializeField] ParticleSystem fleasSystem;
+    [SerializeField] Crew crewScript;
 
     void Start()
     {
@@ -21,7 +28,18 @@ public class Rat : MonoBehaviour
     // Food matters 
     void Update()
     {
-        
+        for (int i = 0; i < crewScript.CrewMates.Length; i++)
+        {
+            float distance = Vector3.Distance(transform.position, crewScript.CrewMates[i].transform.position);
+            if (distance < (infectionRadius/2))
+            {
+                crewScript.CrewMates[i].IncreaseInfection(infectionRate * 2);
+            }
+            else if (distance < infectionRadius)
+            {
+                crewScript.CrewMates[i].IncreaseInfection(infectionRate);
+            }
+        }
     }
 
     public void PickupFlea()
@@ -47,5 +65,10 @@ public class Rat : MonoBehaviour
             other.GetComponent<FoodCollectible>().CollectFood();
             foodCollected++;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, infectionRadius);
     }
 }
