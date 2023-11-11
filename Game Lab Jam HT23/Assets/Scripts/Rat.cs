@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] int fleas;
+    [SerializeField] int requiredFood;
+    [SerializeField] int infectionRadius;
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    // Fleas increases when rat is walking
+    // Fleas affects the infection radius
+    // Food matters 
     void Update()
     {
         
