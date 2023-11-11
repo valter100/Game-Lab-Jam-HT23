@@ -722,16 +722,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4717214351934785460, guid: 20e8f2af899b8974f94a860b6f18722a,
-        type: 3}
-      propertyPath: dayNight
-      value: 
-      objectReference: {fileID: 1982918541}
-    - target: {fileID: 4731629426349896239, guid: 20e8f2af899b8974f94a860b6f18722a,
-        type: 3}
-      propertyPath: fleas
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4731629426349896239, guid: 20e8f2af899b8974f94a860b6f18722a,
         type: 3}
       propertyPath: crewScript
@@ -742,21 +732,6 @@ PrefabInstance:
       propertyPath: pickupSource
       value: 
       objectReference: {fileID: 1399682102}
-    - target: {fileID: 4731629426349896239, guid: 20e8f2af899b8974f94a860b6f18722a,
-        type: 3}
-      propertyPath: infectionRate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4731629426349896239, guid: 20e8f2af899b8974f94a860b6f18722a,
-        type: 3}
-      propertyPath: infectionRadius
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7865445586343457884, guid: 20e8f2af899b8974f94a860b6f18722a,
-        type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8547545157547084299, guid: 20e8f2af899b8974f94a860b6f18722a,
         type: 3}
       propertyPath: m_Name
@@ -2265,7 +2240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountOfNights: 10
-  nightLength: 50
+  nightLength: 200
   lightIntensity: 2
   dirLight: {fileID: 932664559}
   text: {fileID: 2136791709}
