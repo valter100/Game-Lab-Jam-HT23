@@ -46,6 +46,7 @@ public class Rat : MonoBehaviour
         {
             other.GetComponent<FoodCollectible>().CollectFood();
             foodCollected++;
+
         }
     }
 }
