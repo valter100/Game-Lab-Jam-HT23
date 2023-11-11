@@ -106,7 +106,6 @@ public class DayNightCycle : MonoBehaviour
         {
             SwitchToDayCamera();
             ShowNightText("Night: " + (currentNight + 2).ToString());
-            
         }
 
         dayTime -= Time.deltaTime;

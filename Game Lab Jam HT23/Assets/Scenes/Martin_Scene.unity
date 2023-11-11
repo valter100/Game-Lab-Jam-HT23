@@ -1527,6 +1527,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfPeople: 50
   text: {fileID: 1574182502}
+  spawnLocations: []
+--- !u!1001 &2098582845
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 318684812045875173, guid: 238350174870b934d8bc89c9bca05366,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318684812045875173, guid: 238350174870b934d8bc89c9bca05366,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318684812045875173, guid: 238350174870b934d8bc89c9bca05366,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318684812045875173, guid: 238350174870b934d8bc89c9bca05366,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 318684812045875173, guid: 238350174870b934d8bc89c9bca05366,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318684812045875173, guid: 238350174870b934d8bc89c9bca05366,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318684812045875173, guid: 238350174870b934d8bc89c9bca05366,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318684812045875173, guid: 238350174870b934d8bc89c9bca05366,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318684812045875173, guid: 238350174870b934d8bc89c9bca05366,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 318684812045875173, guid: 238350174870b934d8bc89c9bca05366,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422638582893474986, guid: 238350174870b934d8bc89c9bca05366,
+        type: 3}
+      propertyPath: m_Name
+      value: FurnitureLowerDeck
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 238350174870b934d8bc89c9bca05366, type: 3}
 --- !u!1 &2136791707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,3 +1743,4 @@ SceneRoots:
   - {fileID: 143768616}
   - {fileID: 1417868114}
   - {fileID: 414871968}
+  - {fileID: 2098582845}
