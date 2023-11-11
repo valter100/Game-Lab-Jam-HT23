@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Crew : MonoBehaviour
 {
-    [SerializeField] int numberOfPeople = 40;
-    CrewMate[] crewMates;
+    int numberOfPeople;
+    [SerializeField] CrewMate[] crewMates;
     int valueOfPeople = 4;
     int deadPeople = 0;
     int infectedPeople = 0;
@@ -16,7 +16,6 @@ public class Crew : MonoBehaviour
     
 
     [SerializeField] TextMeshProUGUI text;
-    [SerializeField] Vector3[] spawnLocations;
 
     public int DeadPeople
     { 
@@ -34,11 +33,7 @@ public class Crew : MonoBehaviour
 
     void Start()
     {
-        crewMates = new CrewMate[numberOfPeople / valueOfPeople];
-        //for (int i = 0; i < crewMates.Length; i++)
-        //{
-        //    crewMates[i] = Instantiate();
-        //}
+        numberOfPeople = crewMates.Length;
     }
 
     void Update()

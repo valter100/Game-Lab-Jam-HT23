@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrewMate
+public class CrewMate : MonoBehaviour
 {
 
     Crew.HealthState state = Crew.HealthState.healthy;
