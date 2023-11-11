@@ -13,6 +13,8 @@ public class CrewMate : MonoBehaviour
     float infectionCooldown = 0.2f;
     float infectionCooldownReset = 0.2f;
 
+    [SerializeField] AudioSource audioSource;
+
 
     public float InfectionLevel
     {
@@ -22,7 +24,12 @@ public class CrewMate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        audioSource.Play();
+    }
+
+    public void NPCTalk(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 
     public void IncreaseInfection(float infection)

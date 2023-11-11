@@ -11,13 +11,17 @@ public class Crew : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI text;
 
+    [SerializeField] AudioClip[] audioClips;
+    [SerializeField] float timeBetweenAudioClips;
+    float timeSinceLastAudioClip;
+
     public CrewMate[] CrewMates
     {
         get { return crewMates; }
     }
 
     public int DeadPeople
-    { 
+    {
         get { return deadPeople; }
     }
 
@@ -29,18 +33,39 @@ public class Crew : MonoBehaviour
     void Start()
     {
         crewMates = GameObject.FindObjectsOfType<CrewMate>();
-        alivePeople = crewMates.Length; 
+        alivePeople = crewMates.Length;
     }
 
     void Update()
     {
-        
+        timeSinceLastAudioClip += Time.deltaTime;
+
+        if (timeSinceLastAudioClip > timeBetweenAudioClips)
+        {
+            timeSinceLastAudioClip = 0;
+
+            Rat rat = GameObject.FindObjectOfType<Rat>();
+
+            CrewMate closest = crewMates[0];
+
+            for (int i = 1; i < crewMates.Length; i++)
+            {
+                if (crewMates[i].isActiveAndEnabled && Vector3.Distance(rat.transform.position, crewMates[i].transform.position) > Vector3.Distance(rat.transform.position, closest.transform.position))
+                {
+                    closest = crewMates[i];
+                }
+            }
+
+            int rnd = Random.Range(0, audioClips.Length);
+
+            closest.NPCTalk(audioClips[rnd]);
+        }
     }
 
     public void PrintCrew()
     {
         text.enabled = true;
-        text.text = "Number of alive crewmates: " + (alivePeople) + "\n"  + "Number of dead crewmates: " + deadPeople;
+        text.text = "Number of alive crewmates: " + (alivePeople) + "\n" + "Number of dead crewmates: " + deadPeople;
     }
 
     public void DisableCrewText()
