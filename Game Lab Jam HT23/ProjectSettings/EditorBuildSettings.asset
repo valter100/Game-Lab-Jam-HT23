@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: dbd26dc31640d084dabbe5387707852c
   - enabled: 1
-    path: Assets/Scenes/Sara_scene.unity
-    guid: f4b09cadf69802f4180729d3c34816eb
+    path: Assets/Scenes/Game.unity
+    guid: 3fbf014fe2768624b9ab1244a4d5277a
   m_configObjects: {}

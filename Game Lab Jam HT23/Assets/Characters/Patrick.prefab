@@ -5873,7 +5873,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Patrick
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 8645810124330599053}
 --- !u!114 &4717214351934785460
 MonoBehaviour:
   m_ObjectHideFlags: 0
