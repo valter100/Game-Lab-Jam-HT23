@@ -7,6 +7,7 @@ public class DayNightCycle : MonoBehaviour
 {
     [SerializeField] Night[] nights;
     [SerializeField] int amountOfNights;
+
     [SerializeField] float nightLength = 10f;
     int currentNight = 0;
 
@@ -24,12 +25,20 @@ public class DayNightCycle : MonoBehaviour
 
     [SerializeField] Camera dayCamera;
     [SerializeField] Camera nightCamera;
-
+    Vector3 ratCameraLocation;
 
     [SerializeField] GameObject[] food;
+    
     [SerializeField] Vector3[] spawnPoints;
 
     [SerializeField] Crew crewScript;
+    [SerializeField] GameObject rat;
+
+
+    public bool Night
+    { 
+        get { return night; }
+    }
 
     void Start()
     {
@@ -42,6 +51,8 @@ public class DayNightCycle : MonoBehaviour
             nights[i] = new Night();
             nights[i].CurrentNightLength = nightLength;
         }
+        ratCameraLocation = nightCamera.gameObject.transform.position;
+
 
         SwitchToDayCamera();
     }
@@ -108,7 +119,6 @@ public class DayNightCycle : MonoBehaviour
 
     public void ShowNightText(string currentNight)
     {
-        
         text.enabled = true;
         text.text = (currentNight);
 
@@ -122,6 +132,8 @@ public class DayNightCycle : MonoBehaviour
 
     public void SwitchToNightCamera()
     {
+        rat.transform.position = ratCameraLocation;
+        nightCamera.transform.position = ratCameraLocation;
         nightCamera.enabled = true;
         dayCamera.enabled = false;
     }
