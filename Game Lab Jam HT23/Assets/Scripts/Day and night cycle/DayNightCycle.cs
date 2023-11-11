@@ -100,7 +100,7 @@ public class DayNightCycle : MonoBehaviour
         if (currentNight == nights.Length - 1)
         {
             //Victory
-            ShowNightText("VICTORY!!");
+            Win();
             return;
         }
         // Makes sure this only happens once per night
@@ -149,5 +149,9 @@ public class DayNightCycle : MonoBehaviour
         nightCamera.enabled = false;
 
         slider.gameObject.SetActive(true);
+    }
+    public void Win()
+    {
+
     }
 }
