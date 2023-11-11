@@ -7,23 +7,18 @@ public class Crew : MonoBehaviour
 {
     int alivePeople;
     [SerializeField] CrewMate[] crewMates;
-    int valueOfPeople = 4;
     int deadPeople = 0;
-    int infectedPeople = 0;
-
-    public enum HealthState { healthy, infected, dead };
-
-    
 
     [SerializeField] TextMeshProUGUI text;
+
+    public CrewMate[] CrewMates
+    {
+        get { return crewMates; }
+    }
 
     public int DeadPeople
     { 
         get { return deadPeople; }
-    }
-    public int InfectedPeople
-    {
-        get { return infectedPeople; }
     }
 
     public int NumberOfPeople
@@ -33,7 +28,8 @@ public class Crew : MonoBehaviour
 
     void Start()
     {
-        alivePeople = crewMates.Length;
+        crewMates = GameObject.FindObjectsOfType<CrewMate>();
+        alivePeople = crewMates.Length; 
     }
 
     void Update()
@@ -44,7 +40,7 @@ public class Crew : MonoBehaviour
     public void PrintCrew()
     {
         text.enabled = true;
-        text.text = "Number of alive crewmates: " + (alivePeople - (infectedPeople + deadPeople)) + "\n" + "Number of infected crewmates: " + infectedPeople + "\n" + "Number of dead crewmates: " + deadPeople;
+        text.text = "Number of alive crewmates: " + (alivePeople) + "\n"  + "Number of dead crewmates: " + deadPeople;
     }
 
     public void DisableCrewText()
@@ -55,24 +51,15 @@ public class Crew : MonoBehaviour
     public void HandleCrew()
     {
         deadPeople = 0;
-        infectedPeople = 0;
+        alivePeople = crewMates.Length;
+
         for (int i = 0; i < crewMates.Length; i++)
         {
-            if (crewMates[i].State == HealthState.dead)
+            if (!crewMates[i].alive)
             {
                 deadPeople++;
-                continue;
-            }
-            if (crewMates[i].CheckIfDead())
-            {
-                deadPeople++;
-                return;
-            }
-
-            if (crewMates[i].InfectionLevel >= 100)
-            {
-                infectedPeople++;
-                crewMates[i].daysSick++;
+                alivePeople--;
+                crewMates[i].gameObject.SetActive(false);
             }
         }
     }
