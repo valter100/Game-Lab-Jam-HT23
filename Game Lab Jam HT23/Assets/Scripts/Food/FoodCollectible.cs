@@ -24,6 +24,7 @@ public class FoodCollectible : MonoBehaviour
     }
     public void CollectFood()
     {
-        Destroy(gameObject);
+        FoodManager.instance.UpdateSliderOnFoodPickup();
+        Destroy(this.gameObject);
     }
 }
