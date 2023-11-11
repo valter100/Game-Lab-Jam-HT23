@@ -25,7 +25,7 @@ public class FoodManager : MonoBehaviour
 
     public void StartDay()
     {
-        SpawnFood(startAmountOfFood, 0.4f);
+        SpawnFood(startAmountOfFood, difficulty);
         ResetFoodSlider();
     }
 
@@ -40,7 +40,7 @@ public class FoodManager : MonoBehaviour
         difficulty = Mathf.Clamp01(difficulty);
 
         int maxSpawnLength = (int)(foodSpawnPoints.Length * difficulty);
-        int minSpawnLength = (int)(foodSpawnPoints.Length * (difficulty * 0.5f));
+        int minSpawnLength = (int)(foodSpawnPoints.Length * (difficulty * 0.5));
 
         int?[] takenSpots = new int?[foodSpawnPoints.Length];
 
@@ -53,7 +53,7 @@ public class FoodManager : MonoBehaviour
 
             while (takenSpots[rs] != null)
             {
-                rs++;
+                rs += UnityEngine.Random.Range(0, 3);
             }
 
             takenSpots[rs] = 1;
