@@ -415,6 +415,59 @@ Transform:
   - {fileID: 838561187397648671}
   m_Father: {fileID: 633947557330908846}
   m_LocalEulerAnglesHint: {x: -31.59, y: 0, z: 0}
+--- !u!1 &4651894779432936498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6480899637985578658}
+  - component: {fileID: 2117581907052930988}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6480899637985578658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4651894779432936498}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.42, z: -2.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2963389547669870254}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2117581907052930988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4651894779432936498}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.9581628, y: 1, z: 6.6304545}
+  m_Center: {x: -0, y: 0, z: 0}
 --- !u!1 &4850663879113897522
 GameObject:
   m_ObjectHideFlags: 0
@@ -5615,6 +5668,7 @@ GameObject:
   - component: {fileID: 4717214351934785460}
   - component: {fileID: 647190426555880226}
   - component: {fileID: 7254363130773603659}
+  - component: {fileID: 7944464864416990776}
   m_Layer: 0
   m_Name: Patrick
   m_TagString: Untagged
@@ -5637,6 +5691,7 @@ Transform:
   m_Children:
   - {fileID: 8959441041714163626}
   - {fileID: 7068200736560759754}
+  - {fileID: 6480899637985578658}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5359123011815378556
@@ -5653,7 +5708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 3950fa17198a41048ba4724b043ddfb1,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -5664,10 +5719,30 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 96cd10f1-4f5b-427e-9533-6f4a41fa1d92
+    m_ActionName: Patrick/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4717214351934785460}
+        m_TargetAssemblyTypeName: RatMovement, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6e757e75-8659-455b-9d4e-b294fa6f4e29
+    m_ActionName: Patrick/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Actions
+  m_DefaultActionMap: Patrick
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &4717214351934785460
@@ -5683,7 +5758,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jumpForce: 240
+  isGrounded: 0
   anim: {fileID: 7168980853853631776}
+  groundCheckBox: {fileID: 2117581907052930988}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!54 &647190426555880226
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5730,8 +5811,25 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.6125264, y: 5.126446, z: 11.244772}
-  m_Center: {x: 0.061343618, y: 2.063223, z: -2.999887}
+  m_Size: {x: 4.6125264, y: 4.083252, z: 11.244772}
+  m_Center: {x: 0.061343618, y: 2.5848198, z: -2.999887}
+--- !u!114 &7944464864416990776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8547545157547084299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cacfb1f33198e4d9af920606823e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fleas: 0
+  requiredFood: 0
+  infectionRadius: 0
+  timeBetweenFleaPickup: 0
+  fleasSystem: {fileID: 0}
 --- !u!1 &8697326814300614227
 GameObject:
   m_ObjectHideFlags: 0
