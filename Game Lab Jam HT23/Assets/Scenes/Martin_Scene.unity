@@ -558,6 +558,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4717214351934785460, guid: 20e8f2af899b8974f94a860b6f18722a,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 8547545157547084299, guid: 20e8f2af899b8974f94a860b6f18722a,
         type: 3}
       propertyPath: m_Name
@@ -565,12 +570,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8547545157547084299, guid: 20e8f2af899b8974f94a860b6f18722a,
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2963389547669870254, guid: 20e8f2af899b8974f94a860b6f18722a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1399682101}
+      addedObject: {fileID: 1417868114}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20e8f2af899b8974f94a860b6f18722a, type: 3}
 --- !u!1 &506649222
 GameObject:
@@ -766,6 +771,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 623353618988256015, guid: a1dcd447bfbb3bc45821f8b436c031d2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033413506683707016, guid: a1dcd447bfbb3bc45821f8b436c031d2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2033413506683707016, guid: a1dcd447bfbb3bc45821f8b436c031d2,
         type: 3}
       propertyPath: m_IsActive
@@ -795,6 +810,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StylShip_Body OBJECT THAT HAS BOX COLLIDER FOR BOTTOM FLOOR
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944351521576922507, guid: a1dcd447bfbb3bc45821f8b436c031d2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8515472688152868816, guid: a1dcd447bfbb3bc45821f8b436c031d2,
         type: 3}
@@ -965,23 +985,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 414871968}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1399682101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &1399682106 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2963389547669870254, guid: 20e8f2af899b8974f94a860b6f18722a,
+    type: 3}
+  m_PrefabInstance: {fileID: 414871968}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399682095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24cacfb1f33198e4d9af920606823e02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fleas: 0
-  requiredFood: 0
-  infectionRadius: 0
-  timeBetweenFleaPickup: 0
-  fleasSystem: {fileID: 0}
 --- !u!1 &1417868110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,12 +1113,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417868110}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0019264664, y: 0.9936194, z: -0.111453585, w: 0.017174643}
-  m_LocalPosition: {x: -4.01, y: -28.14, z: 28.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.11147022, y: 0.00000006891786, z: -0.000000008847564, w: 0.99376774}
+  m_LocalPosition: {x: 0, y: 7.9299927, z: -19.259933}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1399682106}
   m_LocalEulerAnglesHint: {x: 12.8, y: 178.02, z: 0}
 --- !u!114 &1417868115
 MonoBehaviour:
@@ -1118,7 +1127,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417868110}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6294a362e15cee649ac43e1dd98f0ee0, type: 3}
   m_Name: 
@@ -1676,6 +1685,5 @@ SceneRoots:
   - {fileID: 145260578}
   - {fileID: 506649225}
   - {fileID: 143768616}
-  - {fileID: 1417868114}
   - {fileID: 414871968}
   - {fileID: 2098582845}

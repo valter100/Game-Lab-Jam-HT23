@@ -35,6 +35,15 @@ public partial class @RatActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""6e757e75-8659-455b-9d4e-b294fa6f4e29"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,6 +101,17 @@ public partial class @RatActions: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""383104a2-ccbb-4d9e-9906-6d3175282f2d"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -101,6 +121,7 @@ public partial class @RatActions: IInputActionCollection2, IDisposable
         // Patrick
         m_Patrick = asset.FindActionMap("Patrick", throwIfNotFound: true);
         m_Patrick_Movement = m_Patrick.FindAction("Movement", throwIfNotFound: true);
+        m_Patrick_Jump = m_Patrick.FindAction("Jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -163,11 +184,13 @@ public partial class @RatActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Patrick;
     private List<IPatrickActions> m_PatrickActionsCallbackInterfaces = new List<IPatrickActions>();
     private readonly InputAction m_Patrick_Movement;
+    private readonly InputAction m_Patrick_Jump;
     public struct PatrickActions
     {
         private @RatActions m_Wrapper;
         public PatrickActions(@RatActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Patrick_Movement;
+        public InputAction @Jump => m_Wrapper.m_Patrick_Jump;
         public InputActionMap Get() { return m_Wrapper.m_Patrick; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -180,6 +203,9 @@ public partial class @RatActions: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
         }
 
         private void UnregisterCallbacks(IPatrickActions instance)
@@ -187,6 +213,9 @@ public partial class @RatActions: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
         }
 
         public void RemoveCallbacks(IPatrickActions instance)
@@ -207,5 +236,6 @@ public partial class @RatActions: IInputActionCollection2, IDisposable
     public interface IPatrickActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }
