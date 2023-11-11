@@ -44,4 +44,8 @@ public class CrewMate : MonoBehaviour
 
         
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+    }
 }
