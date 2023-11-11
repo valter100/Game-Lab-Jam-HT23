@@ -117,7 +117,7 @@ public class DayNightCycle : MonoBehaviour
             currentNight++;
         }
 
-        slider.value = currentNight;
+        slider.value = currentNight+1;
     }
 
     public void ShowNightText(string currentNight)
@@ -135,18 +135,17 @@ public class DayNightCycle : MonoBehaviour
 
     public void SwitchToNightCamera()
     {
-        rat.transform.position = ratCameraLocation;
-        nightCamera.transform.position = ratCameraLocation;
+        //rat.transform.position = ratCameraLocation;
+        //nightCamera.transform.position = ratCameraLocation;
         nightCamera.enabled = true;
         dayCamera.enabled = false;
-        slider.enabled = false;
+        slider.gameObject.SetActive(false);
     }
 
     public void SwitchToDayCamera()
     {
         dayCamera.enabled = true;
         nightCamera.enabled = false;
-
-        slider.enabled = true;
+        slider.gameObject.SetActive(true);
     }
 }

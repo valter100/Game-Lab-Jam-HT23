@@ -721,9 +721,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2963389547669870254, guid: 20e8f2af899b8974f94a860b6f18722a,
+        type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1417868114}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20e8f2af899b8974f94a860b6f18722a, type: 3}
+--- !u!4 &414871969 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2963389547669870254, guid: 20e8f2af899b8974f94a860b6f18722a,
+    type: 3}
+  m_PrefabInstance: {fileID: 414871968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &506649222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,14 +1249,13 @@ GameObject:
   - component: {fileID: 1417868114}
   - component: {fileID: 1417868113}
   - component: {fileID: 1417868111}
-  - component: {fileID: 1417868115}
   m_Layer: 0
   m_Name: NightCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1417868111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1350,27 +1359,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417868110}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0019264664, y: 0.9936194, z: -0.111453585, w: 0.017174643}
-  m_LocalPosition: {x: -4.01, y: -28.14, z: 28.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.01745245, y: 0, z: 0, w: 0.99984777}
+  m_LocalPosition: {x: -0, y: 6, z: -8}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 12.8, y: 178.02, z: 0}
---- !u!114 &1417868115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417868110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6294a362e15cee649ac43e1dd98f0ee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followObject: {fileID: 1399682095}
-  Offset: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 414871969}
+  m_LocalEulerAnglesHint: {x: 2, y: 0, z: 0}
 --- !u!1 &1574182500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2049,6 +2044,5 @@ SceneRoots:
   - {fileID: 145260578}
   - {fileID: 506649225}
   - {fileID: 143768616}
-  - {fileID: 1417868114}
   - {fileID: 414871968}
   - {fileID: 2098582845}
