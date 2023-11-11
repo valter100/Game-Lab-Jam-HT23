@@ -51,7 +51,7 @@ public class DayNightCycle : MonoBehaviour
             nights[i] = new Night();
             nights[i].CurrentNightLength = nightLength;
         }
-        ratCameraLocation = nightCamera.gameObject.transform.position;
+        ratCameraLocation = rat.transform.position;
 
 
         SwitchToDayCamera();
@@ -106,7 +106,6 @@ public class DayNightCycle : MonoBehaviour
         {
             SwitchToDayCamera();
             ShowNightText("Night: " + (currentNight + 2).ToString());
-            
         }
 
         dayTime -= Time.deltaTime;

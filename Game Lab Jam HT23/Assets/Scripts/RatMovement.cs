@@ -5,20 +5,22 @@ using UnityEngine.InputSystem;
 
 public class RatMovement : MonoBehaviour
 {
-    [SerializeField] MouseActions actions;
+    [SerializeField] RatActions actions;
     [SerializeField] float speed;
     [SerializeField] Animator anim;
+    [SerializeField] Rat rat;
     void Start()
     {
-        actions = new MouseActions();
-        actions.Actions.Enable();
+        actions = new RatActions();
+        rat = GetComponent<Rat>();
+        actions.Patrick.Enable();
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        Vector2 inputValue = actions.Actions.Movement.ReadValue<Vector2>();
+        Vector2 inputValue = actions.Patrick.Movement.ReadValue<Vector2>();
         Vector3 movementValue = new Vector3(inputValue.x, 0, inputValue.y);
 
         if(movementValue != Vector3.zero)
@@ -26,6 +28,7 @@ public class RatMovement : MonoBehaviour
             transform.position += movementValue * speed * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movementValue), 0.25f);
             anim.SetBool("IsMoving", true);
+
         }
         else
         {
@@ -33,11 +36,6 @@ public class RatMovement : MonoBehaviour
         }
 
 
-    }
-
-    public void OnMovement(InputValue value)
-    {
-        transform.position += new Vector3(value.Get<Vector2>().x, 0, value.Get<Vector2>().y) * speed * Time.deltaTime;
     }
 
     //public void Jump(InputAction.CallbackContext context)
