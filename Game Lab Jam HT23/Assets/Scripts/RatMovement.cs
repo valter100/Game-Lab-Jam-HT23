@@ -23,6 +23,8 @@ public class RatMovement : MonoBehaviour
         Vector2 inputValue = actions.Patrick.Movement.ReadValue<Vector2>();
         Vector3 movementValue = new Vector3(inputValue.x, 0, inputValue.y);
 
+        Debug.Log(inputValue);
+
         if(movementValue != Vector3.zero)
         {
             transform.position += movementValue * speed * Time.deltaTime;
