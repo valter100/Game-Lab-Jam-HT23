@@ -13,25 +13,17 @@ public class RatMovement : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] Collider groundCheckBox;
     [SerializeField] LayerMask groundLayerMask;
-    [SerializeField] GameObject radius;
-    [SerializeField] DayNightCycle dayNight;
-
     Rat rat;
     void Start()
     {
         actions = new RatActions();
         rat = GetComponent<Rat>();
         actions.Patrick.Enable();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!dayNight.Night)
-        {
-            return;
-        }
         CheckGrounded();
         
         Vector2 inputValue = actions.Patrick.Movement.ReadValue<Vector2>();
@@ -53,14 +45,6 @@ public class RatMovement : MonoBehaviour
             //transform.position += transform.forward * speed * Time.deltaTime;
         }
 
-        if (isGrounded)
-        {
-            radius.SetActive(true);
-        }
-        else
-        {
-            radius.SetActive(false);
-        }
 
     }
 

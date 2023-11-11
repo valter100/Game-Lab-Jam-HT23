@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Food
   - FoodSpawn
-  - Rat
   layers:
   - Default
   - TransparentFX

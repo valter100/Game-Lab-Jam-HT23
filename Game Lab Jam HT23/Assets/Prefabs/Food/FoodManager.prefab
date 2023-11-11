@@ -57,4 +57,3 @@ MonoBehaviour:
   foodSpawnPoints: []
   foodSlider: {fileID: 0}
   startAmountOfFood: 5
-  difficulty: 0

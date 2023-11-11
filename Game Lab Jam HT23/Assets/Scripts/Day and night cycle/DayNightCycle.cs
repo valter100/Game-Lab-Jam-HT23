@@ -26,8 +26,6 @@ public class DayNightCycle : MonoBehaviour
 
     [SerializeField] Camera dayCamera;
     [SerializeField] Camera nightCamera;
-    [SerializeField] Material daySkybox;
-    [SerializeField] Material nightSkybox;
     Vector3 ratCameraLocation;
 
     [SerializeField] GameObject[] food;
@@ -38,7 +36,6 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField] GameObject rat;
 
     [SerializeField] Slider slider;
-    [SerializeField] MusicManager musicManager;
 
     public bool Night
     { 
@@ -87,7 +84,6 @@ public class DayNightCycle : MonoBehaviour
                 night = true;
 
                 SwitchToNightCamera();
-                musicManager.ToggleMusic();
             }
 
             nights[currentNight].UpdateTime();
@@ -113,7 +109,7 @@ public class DayNightCycle : MonoBehaviour
             SwitchToDayCamera();
             crewScript.HandleCrew();
             ShowNightText("Night: " + (currentNight + 2).ToString());
-            musicManager.ToggleMusic();
+            
         }
 
         dayTime -= Time.deltaTime;
@@ -123,7 +119,6 @@ public class DayNightCycle : MonoBehaviour
             currentNight++;
         }
         slider.value = currentNight + 1;
-        RenderSettings.skybox = daySkybox;
     }
 
     public void ShowNightText(string currentNight)
@@ -146,14 +141,13 @@ public class DayNightCycle : MonoBehaviour
         nightCamera.enabled = true;
         dayCamera.enabled = false;
         slider.gameObject.SetActive(false);
-
-        RenderSettings.skybox = nightSkybox;
     }
 
     public void SwitchToDayCamera()
     {
         dayCamera.enabled = true;
         nightCamera.enabled = false;
+
         slider.gameObject.SetActive(true);
     }
     public void Win()

@@ -8,7 +8,7 @@ public class Rat : MonoBehaviour
     [SerializeField] float infectionRadius = 1f;
     [SerializeField] float infectionRate = 1f;
 
-    [SerializeField] float fleas = 1f;
+    [SerializeField] int fleas;
     [SerializeField] int foodCollected;
 
     [SerializeField] float timeBetweenFleaPickup;
@@ -16,31 +16,9 @@ public class Rat : MonoBehaviour
     [SerializeField] ParticleSystem fleasSystem;
     [SerializeField] Crew crewScript;
 
-
-    [SerializeField] float distanceFlea = 10f;
-    [SerializeField] AudioSource pickupSource;
-    float currentDistanceFlee = 0f;
-
-    Vector3 lastFramesPosition;
-
-    [SerializeField] ParticleSystem fleaSystem;
-    [SerializeField] ParticleSystem radiusSystem;
-    
-
-
-    public float InfectionRadius
-    {
-        get { return infectionRadius; }
-    }
-    public float InfectionRate
-    {
-        get { return infectionRate; }
-    }
-
     void Start()
     {
-        lastFramesPosition = transform.position;
-        fleas = infectionRadius;
+        
     }
 
     // Fleas increases when rat is walking
@@ -50,8 +28,9 @@ public class Rat : MonoBehaviour
     {
         for (int i = 0; i < crewScript.CrewMates.Length; i++)
         {
-            float distance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(crewScript.CrewMates[i].transform.position.x, 0, crewScript.CrewMates[i].transform.position.z));
-            if (distance < (infectionRadius / 2))
+            float distance = Vector3.Distance(transform.position, crewScript.CrewMates[i].gameObject.transform.position);
+
+            if (distance < (infectionRadius/2))
             {
                 crewScript.CrewMates[i].IncreaseInfection(infectionRate * 2);
             }
@@ -60,34 +39,22 @@ public class Rat : MonoBehaviour
                 crewScript.CrewMates[i].IncreaseInfection(infectionRate);
             }
         }
-
-        CheckFlea();
     }
 
     public void PickupFlea()
     {
-        fleas++;
-        infectionRadius = fleas;
-        infectionRate = fleas;
-        var shape = radiusSystem.shape;
 
-        shape.radius = infectionRadius;
-        Debug.Log(shape.radius);
-        var emission = fleaSystem.emission;
-        emission.rateOverTime = fleas * 4f;
     }
 
-    public void CheckFlea()
+    public void IncreaseMovementTimer()
     {
-        float deltaDifference = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(lastFramesPosition.x, 0, lastFramesPosition.z));
-        currentDistanceFlee += deltaDifference;
+        timeSinceLastFleaPickup += Time.deltaTime;
 
-        if(currentDistanceFlee > distanceFlea)
+        if(timeSinceLastFleaPickup > timeBetweenFleaPickup)
         {
-            currentDistanceFlee = 0;
+            timeSinceLastFleaPickup = 0;
             PickupFlea();
         }
-        lastFramesPosition = transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -95,12 +62,12 @@ public class Rat : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             other.GetComponentInParent<FoodCollectible>().CollectFood();
-            pickupSource.Play();
             foodCollected++;
         }
     }
-    //public void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawSphere(transform.position, infectionRadius);
-    //}
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, infectionRadius);
+    }
 }
