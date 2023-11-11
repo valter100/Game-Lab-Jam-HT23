@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &29802763 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8645810124330599053, guid: 20e8f2af899b8974f94a860b6f18722a,
+    type: 3}
+  m_PrefabInstance: {fileID: 414871968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &78972573
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,19 +577,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2963389547669870254, guid: 20e8f2af899b8974f94a860b6f18722a,
-        type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 1417868114}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20e8f2af899b8974f94a860b6f18722a, type: 3}
---- !u!4 &414871969 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2963389547669870254, guid: 20e8f2af899b8974f94a860b6f18722a,
-    type: 3}
-  m_PrefabInstance: {fileID: 414871968}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &506649222
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,134 +973,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 414871968}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1417868110
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1417868114}
-  - component: {fileID: 1417868113}
-  - component: {fileID: 1417868111}
-  m_Layer: 0
-  m_Name: NightCamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1417868111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417868110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
---- !u!20 &1417868113
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417868110}
-  m_Enabled: 0
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1417868114
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417868110}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.01745245, y: 0, z: 0, w: 0.99984777}
-  m_LocalPosition: {x: -0, y: 6, z: -8}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 414871969}
-  m_LocalEulerAnglesHint: {x: 2, y: 0, z: 0}
 --- !u!1 &1574182500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,7 +1287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31251e662d6eea841a7e5adf851bc2f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1786648495}
   amountOfNights: 10
   nightLength: 30
   lightIntensity: 2
@@ -1427,11 +1294,12 @@ MonoBehaviour:
   text: {fileID: 2136791709}
   dayTime: 2
   dayCamera: {fileID: 143768615}
-  nightCamera: {fileID: 1417868113}
+  nightCamera: {fileID: 29802763}
   food: []
   spawnPoints: []
   crewScript: {fileID: 1982918543}
   rat: {fileID: 1399682095}
+  slider: {fileID: 1786648495}
 --- !u!4 &1982918542
 Transform:
   m_ObjectHideFlags: 0
@@ -1459,9 +1327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc846e61f254c24690b0917846a33e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPeople: 50
+  crewMates: []
   text: {fileID: 1574182502}
-  spawnLocations: []
 --- !u!1001 &2098582845
 PrefabInstance:
   m_ObjectHideFlags: 0
