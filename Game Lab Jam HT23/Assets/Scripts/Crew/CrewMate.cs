@@ -13,16 +13,34 @@ public class CrewMate : MonoBehaviour
     float infectionCooldown = 0.2f;
     float infectionCooldownReset = 0.2f;
 
+    Material material;
+
+    Color orignialColor;
+    Color finalColor = new Color(129f, 255f, 0f , 255);
+
 
     public float InfectionLevel
     {
         get { return infectionLevel; }
     }
 
+    private void Start()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).gameObject.activeSelf)
+            {
+                material = transform.GetChild(i).GetComponent<Renderer>().material;
+                break;
+            }
+        }
+        orignialColor = finalColor;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        material.color = Color.Lerp(Color.white, Color.green, infectionLevel/100f);
     }
 
     public void IncreaseInfection(float infection)
