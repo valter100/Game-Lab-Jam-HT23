@@ -5,10 +5,10 @@ using UnityEngine;
 public class Rat : MonoBehaviour
 {
 
-    [SerializeField] float infectionRadius = 1f;
-    [SerializeField] float infectionRate = 1f;
+    [SerializeField] float infectionRadius = 5f;
+    [SerializeField] float infectionRate = 5f;
 
-    [SerializeField] float fleas = 1f;
+    [SerializeField] float fleas;
     [SerializeField] int foodCollected;
 
     [SerializeField] float timeBetweenFleaPickup;
@@ -18,14 +18,11 @@ public class Rat : MonoBehaviour
 
 
     [SerializeField] float distanceFlea = 10f;
+    [SerializeField] AudioSource pickupSource;
+    [SerializeField] Transform hatPosition;
     float currentDistanceFlee = 0f;
-
+    GameObject currentHat;
     Vector3 lastFramesPosition;
-
-    [SerializeField] ParticleSystem fleaSystem;
-    [SerializeField] ParticleSystem radiusSystem;
-    
-
 
     public float InfectionRadius
     {
@@ -61,19 +58,17 @@ public class Rat : MonoBehaviour
         }
 
         CheckFlea();
+
+        if(currentHat)
+        {
+            currentHat.gameObject.transform.position = hatPosition.position;
+        }
     }
 
     public void PickupFlea()
     {
         fleas++;
         infectionRadius = fleas;
-        infectionRate = fleas;
-        var shape = radiusSystem.shape;
-
-        shape.radius = infectionRadius;
-        Debug.Log(shape.radius);
-        var emission = fleaSystem.emission;
-        emission.rateOverTime = fleas * 4f;
     }
 
     public void CheckFlea()
@@ -94,11 +89,15 @@ public class Rat : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             other.GetComponentInParent<FoodCollectible>().CollectFood();
+            pickupSource.Play();
             foodCollected++;
         }
     }
-    //public void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawSphere(transform.position, infectionRadius);
-    //}
+
+    public void EquipHat(Hat newHat)
+    {
+        GameObject SpawnedHat = Instantiate(newHat.gameObject, hatPosition.position, Quaternion.identity);
+        Destroy(SpawnedHat.GetComponent<Hat>());
+        currentHat = SpawnedHat;
+    }
 }

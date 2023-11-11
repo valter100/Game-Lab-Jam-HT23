@@ -38,6 +38,7 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField] GameObject rat;
 
     [SerializeField] Slider slider;
+    [SerializeField] MusicManager musicManager;
 
     public bool Night
     { 
@@ -86,6 +87,7 @@ public class DayNightCycle : MonoBehaviour
                 night = true;
 
                 SwitchToNightCamera();
+                musicManager.ToggleMusic();
             }
 
             nights[currentNight].UpdateTime();
@@ -111,7 +113,7 @@ public class DayNightCycle : MonoBehaviour
             SwitchToDayCamera();
             crewScript.HandleCrew();
             ShowNightText("Night: " + (currentNight + 2).ToString());
-            
+            musicManager.ToggleMusic();
         }
 
         dayTime -= Time.deltaTime;
