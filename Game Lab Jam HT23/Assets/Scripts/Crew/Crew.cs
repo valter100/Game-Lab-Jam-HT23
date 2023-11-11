@@ -5,40 +5,31 @@ using UnityEngine;
 
 public class Crew : MonoBehaviour
 {
-    [SerializeField] int numberOfPeople = 40;
-    CrewMate[] crewMates;
-    int valueOfPeople = 4;
+    int alivePeople;
+    [SerializeField] CrewMate[] crewMates;
     int deadPeople = 0;
-    int infectedPeople = 0;
-
-    public enum HealthState { healthy, infected, dead };
-
-    
 
     [SerializeField] TextMeshProUGUI text;
-    [SerializeField] Vector3[] spawnLocations;
+
+    public CrewMate[] CrewMates
+    {
+        get { return crewMates; }
+    }
 
     public int DeadPeople
     { 
         get { return deadPeople; }
     }
-    public int InfectedPeople
-    {
-        get { return infectedPeople; }
-    }
 
     public int NumberOfPeople
     {
-        get { return numberOfPeople; }
+        get { return alivePeople; }
     }
 
     void Start()
     {
-        crewMates = new CrewMate[numberOfPeople / valueOfPeople];
-        //for (int i = 0; i < crewMates.Length; i++)
-        //{
-        //    crewMates[i] = Instantiate();
-        //}
+        crewMates = GameObject.FindObjectsOfType<CrewMate>();
+        alivePeople = crewMates.Length; 
     }
 
     void Update()
@@ -49,11 +40,27 @@ public class Crew : MonoBehaviour
     public void PrintCrew()
     {
         text.enabled = true;
-        text.text = "Number of alive crewmates: " + (numberOfPeople - (infectedPeople + deadPeople)) + "\n" + "Number of infected crewmates: " + infectedPeople + "\n" + "Number of dead crewmates: " + deadPeople;
+        text.text = "Number of alive crewmates: " + (alivePeople) + "\n"  + "Number of dead crewmates: " + deadPeople;
     }
 
     public void DisableCrewText()
     {
         text.enabled = false;
+    }
+
+    public void HandleCrew()
+    {
+        deadPeople = 0;
+        alivePeople = crewMates.Length;
+
+        for (int i = 0; i < crewMates.Length; i++)
+        {
+            if (!crewMates[i].alive)
+            {
+                deadPeople++;
+                alivePeople--;
+                crewMates[i].gameObject.SetActive(false);
+            }
+        }
     }
 }

@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Crew;
 
-public class CrewMate
+public class CrewMate : MonoBehaviour
 {
 
-    Crew.HealthState state = Crew.HealthState.healthy;
+    public bool alive = true;
 
-    public int daysSick { get; private set; } = 0;
+    [SerializeField] float infectionLevel = 0;
+
+    float infectionCooldown = 0.2f;
+    float infectionCooldownReset = 0.2f;
 
 
-    void Start()
+    public float InfectionLevel
     {
-        
+        get { return infectionLevel; }
     }
 
     // Update is called once per frame
@@ -21,11 +25,23 @@ public class CrewMate
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void IncreaseInfection(float infection)
     {
-        if (other.CompareTag("InfectionRadius"))
+        if (infectionCooldown <= 0)
         {
-            state = Crew.HealthState.infected;
+            infectionLevel += infection;
+            infectionCooldown = infectionCooldownReset;
         }
+        else
+        {
+            infectionCooldown -= Time.deltaTime;
+        }
+
+        if (infectionLevel >= 100)
+        {
+            alive = false;
+        }
+
+        
     }
 }
