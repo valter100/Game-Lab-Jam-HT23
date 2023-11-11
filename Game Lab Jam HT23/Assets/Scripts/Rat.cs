@@ -18,6 +18,7 @@ public class Rat : MonoBehaviour
 
 
     [SerializeField] float distanceFlea = 10f;
+    [SerializeField] AudioSource pickupSource;
     float currentDistanceFlee = 0f;
 
     Vector3 lastFramesPosition;
@@ -82,6 +83,7 @@ public class Rat : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             other.GetComponentInParent<FoodCollectible>().CollectFood();
+            pickupSource.Play();
             foodCollected++;
         }
     }
