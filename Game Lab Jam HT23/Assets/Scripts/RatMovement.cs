@@ -13,6 +13,7 @@ public class RatMovement : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] Collider groundCheckBox;
     [SerializeField] LayerMask groundLayerMask;
+    [SerializeField] GameObject radius;
     Rat rat;
     void Start()
     {
@@ -45,6 +46,14 @@ public class RatMovement : MonoBehaviour
             //transform.position += transform.forward * speed * Time.deltaTime;
         }
 
+        if (isGrounded)
+        {
+            radius.SetActive(true);
+        }
+        else
+        {
+            radius.SetActive(false);
+        }
 
     }
 

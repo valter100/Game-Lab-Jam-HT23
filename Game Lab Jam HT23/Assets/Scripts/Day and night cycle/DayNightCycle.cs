@@ -152,7 +152,6 @@ public class DayNightCycle : MonoBehaviour
     {
         dayCamera.enabled = true;
         nightCamera.enabled = false;
-
         slider.gameObject.SetActive(true);
     }
 }

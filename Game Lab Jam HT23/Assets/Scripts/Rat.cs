@@ -22,6 +22,11 @@ public class Rat : MonoBehaviour
 
     Vector3 lastFramesPosition;
 
+    [SerializeField] ParticleSystem fleaSystem;
+    [SerializeField] ParticleSystem radiusSystem;
+    
+
+
     public float InfectionRadius
     {
         get { return infectionRadius; }
@@ -62,6 +67,12 @@ public class Rat : MonoBehaviour
     {
         fleas++;
         infectionRadius = fleas;
+        var shape = radiusSystem.shape;
+
+        shape.radius = infectionRadius;
+        Debug.Log(shape.radius);
+        var emission = fleaSystem.emission;
+        emission.rateOverTime = fleas * 4f;
     }
 
     public void CheckFlea()
@@ -85,4 +96,8 @@ public class Rat : MonoBehaviour
             foodCollected++;
         }
     }
+    //public void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawSphere(transform.position, infectionRadius);
+    //}
 }
