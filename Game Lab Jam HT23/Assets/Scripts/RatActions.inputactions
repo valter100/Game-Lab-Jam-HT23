@@ -1,8 +1,8 @@
 {
-    "name": "MouseActions",
+    "name": "RatActions",
     "maps": [
         {
-            "name": "Actions",
+            "name": "Patrick",
             "id": "a52696da-97e0-4238-b8eb-5949e9e130ad",
             "actions": [
                 {
