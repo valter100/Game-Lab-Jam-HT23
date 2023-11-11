@@ -101,12 +101,12 @@ public class DayNightCycle : MonoBehaviour
             ShowNightText("VICTORY!!");
             return;
         }
-        // Makes sure this only happens once per day
+        // Makes sure this only happens once per night
         if (night)
         {
             SwitchToDayCamera();
-            crewScript.HandleCrew();
             ShowNightText("Night: " + (currentNight + 2).ToString());
+            
         }
 
         dayTime -= Time.deltaTime;
@@ -123,7 +123,6 @@ public class DayNightCycle : MonoBehaviour
         text.text = (currentNight);
 
         crewScript.PrintCrew();
-        crewScript.HandleCrew();
         dayTime = dayTimeReset;
 
         night = false;
@@ -134,6 +133,7 @@ public class DayNightCycle : MonoBehaviour
     public void SwitchToNightCamera()
     {
         rat.transform.position = ratCameraLocation;
+        //nightCamera.transform.position = ratCameraLocation;
         nightCamera.enabled = true;
         dayCamera.enabled = false;
     }

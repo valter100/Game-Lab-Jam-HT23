@@ -7,6 +7,7 @@ public class RatMovement : MonoBehaviour
 {
     [SerializeField] RatActions actions;
     [SerializeField] float speed;
+    [SerializeField] float rotationSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] bool isGrounded;
     [SerializeField] Animator anim;
@@ -26,19 +27,22 @@ public class RatMovement : MonoBehaviour
         CheckGrounded();
         
         Vector2 inputValue = actions.Patrick.Movement.ReadValue<Vector2>();
-        Vector3 movementValue = new Vector3(inputValue.x, 0, inputValue.y);
+        //Vector3 movementValue = inputValue.y;
 
-        if(movementValue != Vector3.zero)
+        if(inputValue.y != 0)
         {
-            transform.position += movementValue * speed * Time.deltaTime;
-            //transform.position += Vector3.forward * speed * Time.deltaTime;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movementValue), 0.025f);
+            transform.position += transform.forward * inputValue.y * speed * Time.deltaTime;
             anim.SetBool("IsMoving", true);
-
         }
         else
         {
             anim.SetBool("IsMoving", false);
+        }
+
+        if(inputValue.x != 0)
+        {
+            transform.Rotate(new Vector3(0, inputValue.x, 0) * rotationSpeed * Time.deltaTime);
+            //transform.position += transform.forward * speed * Time.deltaTime;
         }
 
 
