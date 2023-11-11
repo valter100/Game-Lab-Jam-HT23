@@ -55,7 +55,12 @@ public class RatMovement : MonoBehaviour
     public void CheckGrounded()
     {
         isGrounded = Physics.CheckBox(groundCheckBox.bounds.center, groundCheckBox.bounds.extents, Quaternion.identity, groundLayerMask);
-        
+
+        if (isGrounded)
+            anim.SetBool("IsJumping", false);
+        else
+            anim.SetBool("IsJumping", true);
+
     }
 
     //public void Jump(InputAction.CallbackContext context)
