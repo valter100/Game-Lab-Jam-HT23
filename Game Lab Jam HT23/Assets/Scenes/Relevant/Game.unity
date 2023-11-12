@@ -568,6 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c776d4582e419d4e90ab2b6ec8cd200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hatNames: []
 --- !u!1001 &243858684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1132,7 +1133,7 @@ PrefabInstance:
     - target: {fileID: 8904701518301562598, guid: 8bba0499560aa76498fcc3a770c6ce66,
         type: 3}
       propertyPath: nightLength
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8904701518301562598, guid: 8bba0499560aa76498fcc3a770c6ce66,
         type: 3}
@@ -1147,7 +1148,7 @@ PrefabInstance:
     - target: {fileID: 8904701518301562598, guid: 8bba0499560aa76498fcc3a770c6ce66,
         type: 3}
       propertyPath: amountOfNights
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1894,6 +1895,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271596119582899922, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2448351447174322040, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
         type: 3}

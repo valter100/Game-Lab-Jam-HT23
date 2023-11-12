@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class HatInformation : MonoBehaviour
 {
-    List<string> hatNames;
+    [SerializeField] List<string> hatNames;
 
     private void Start()
     {
+        HatInformation[] infos = FindObjectsOfType<HatInformation>();
+
+        foreach (HatInformation info in infos)
+        {
+            if(info != this)
+            {
+                Destroy(info.gameObject);
+                break;
+            }
+        }
+
         hatNames = new List<string>(); 
 
         if(hatNames.Count > 0)

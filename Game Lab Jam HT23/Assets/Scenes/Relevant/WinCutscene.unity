@@ -4124,12 +4124,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hatNames:
-  - Top Hat
-  - Santa Hat
-  - crown
-  - LuffyStrawHat
-  - pirate hat
-  - Propeller Hat
+  - Top Hat(Clone)
+  - Santa Hat(Clone)
+  - crown(Clone)
+  - LuffyStrawHat(Clone)
+  - pirate hat(Clone)
+  - Propeller Hat(Clone)
   hats:
   - {fileID: 8641704156160640355, guid: 0dbd57b602be6124f9b22be4181ed500, type: 3}
   - {fileID: 4630841468604905228, guid: 27671a1dd3413f24ca81e8dfc0c0c5a5, type: 3}
