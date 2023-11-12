@@ -795,6 +795,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5517253346824097352, guid: f3b0f81535b633647beb41fe040265b3,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 38.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517253346824097352, guid: f3b0f81535b633647beb41fe040265b3,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8249973c376e5a84a8384e25db488e7a,
+        type: 2}
+    - target: {fileID: 5517253346824097352, guid: f3b0f81535b633647beb41fe040265b3,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517253346824097352, guid: f3b0f81535b633647beb41fe040265b3,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517253346824097352, guid: f3b0f81535b633647beb41fe040265b3,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517253346824097352, guid: f3b0f81535b633647beb41fe040265b3,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517253346824097352, guid: f3b0f81535b633647beb41fe040265b3,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 9115183058411880985, guid: 8249973c376e5a84a8384e25db488e7a,
+        type: 2}
+    - target: {fileID: 5517253346824097352, guid: f3b0f81535b633647beb41fe040265b3,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517253346824097352, guid: f3b0f81535b633647beb41fe040265b3,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517253346824097352, guid: f3b0f81535b633647beb41fe040265b3,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7667252749003596453, guid: f3b0f81535b633647beb41fe040265b3,
         type: 3}
       propertyPath: m_Name
@@ -857,7 +909,7 @@ PrefabInstance:
     - target: {fileID: 1255065579332649029, guid: 369c225d21e14d541a21e7ea96bcb4cb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 500
+      value: 996.5652
       objectReference: {fileID: 0}
     - target: {fileID: 1255065579332649029, guid: 369c225d21e14d541a21e7ea96bcb4cb,
         type: 3}
@@ -927,6 +979,63 @@ PrefabInstance:
         Everyone died of the plague and no one was left
         to steer the ship.You tried to steer with your tiny hands, but failed. You
         jump of the boat in shame.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675519623636081506, guid: 369c225d21e14d541a21e7ea96bcb4cb,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 96.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675519623636081506, guid: 369c225d21e14d541a21e7ea96bcb4cb,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8249973c376e5a84a8384e25db488e7a,
+        type: 2}
+    - target: {fileID: 4675519623636081506, guid: 369c225d21e14d541a21e7ea96bcb4cb,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675519623636081506, guid: 369c225d21e14d541a21e7ea96bcb4cb,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675519623636081506, guid: 369c225d21e14d541a21e7ea96bcb4cb,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675519623636081506, guid: 369c225d21e14d541a21e7ea96bcb4cb,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675519623636081506, guid: 369c225d21e14d541a21e7ea96bcb4cb,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 118.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675519623636081506, guid: 369c225d21e14d541a21e7ea96bcb4cb,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 9115183058411880985, guid: 8249973c376e5a84a8384e25db488e7a,
+        type: 2}
+    - target: {fileID: 4675519623636081506, guid: 369c225d21e14d541a21e7ea96bcb4cb,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675519623636081506, guid: 369c225d21e14d541a21e7ea96bcb4cb,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675519623636081506, guid: 369c225d21e14d541a21e7ea96bcb4cb,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7261281541627506958, guid: 369c225d21e14d541a21e7ea96bcb4cb,
         type: 3}
@@ -1805,6 +1914,7 @@ MonoBehaviour:
   crewScript: {fileID: 1982918543}
   rat: {fileID: 0}
   slider: {fileID: 0}
+  foodSlider: {fileID: 0}
   dayNightImage: {fileID: 0}
   musicManager: {fileID: 0}
 --- !u!4 &1982918542
