@@ -40,8 +40,6 @@ public class DayNightCycle : MonoBehaviour
 
     [SerializeField] Slider slider;
 
-    [SerializeField] int foodRequired = 3;
-
     public bool Night
     { 
         get { return night; }
@@ -59,7 +57,7 @@ public class DayNightCycle : MonoBehaviour
             nights[i].CurrentNightLength = nightLength;
         }
         ratCameraLocation = rat.transform.position;
-        
+
 
         SwitchToDayCamera();
     }
@@ -108,20 +106,6 @@ public class DayNightCycle : MonoBehaviour
             //Win();
             return;
         }
-
-        if (crewScript.DeadPeople > crewScript.CrewMates.Length / 1.5f)
-        {
-            // Lost
-            return;
-        }
-
-        if (rat.GetComponent<Rat>().FoodCollected < foodRequired)
-        {
-            // Lost
-            Debug.Log("HEy");
-            return;
-        }
-
         // Makes sure this only happens once per night
         if (night)
         {
