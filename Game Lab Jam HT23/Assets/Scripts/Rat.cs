@@ -27,6 +27,7 @@ public class Rat : MonoBehaviour
     [SerializeField] List<GameObject> hats;
     [SerializeField] int hatAmount;
     [SerializeField] int currentHatIndex;
+    [SerializeField] GameObject hatText;
     Vector3 lastFramesPosition;
 
     public int FoodCollected
@@ -132,6 +133,10 @@ public class Rat : MonoBehaviour
         {
             if (hats[currentHatIndex])
                 hats[currentHatIndex].SetActive(false);
+        }
+        else
+        {
+            hatText.GetComponent<Animator>().Play("TextFade");
         }
 
         GameObject SpawnedHat = Instantiate(newHat.gameObject, hatPosition.position, Quaternion.identity);

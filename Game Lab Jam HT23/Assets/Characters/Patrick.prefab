@@ -5960,6 +5960,7 @@ MonoBehaviour:
   hats: []
   hatAmount: 0
   currentHatIndex: 0
+  hatText: {fileID: 0}
 --- !u!54 &647190426555880226
 Rigidbody:
   m_ObjectHideFlags: 0
