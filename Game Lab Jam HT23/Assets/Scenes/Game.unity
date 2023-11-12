@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.007
   m_LinearFogStart: 51.04
   m_LinearFogEnd: 342.3
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 256
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -351,6 +351,8 @@ GameObject:
   - component: {fileID: 143768615}
   - component: {fileID: 143768614}
   - component: {fileID: 143768613}
+  - component: {fileID: 143768618}
+  - component: {fileID: 143768617}
   m_Layer: 0
   m_Name: DayCamera
   m_TagString: Untagged
@@ -469,13 +471,47 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143768612}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.028654397, y: -0.7652829, z: 0.034148984, w: 0.6421486}
+  m_LocalRotation: {x: 0.031236729, y: -0.8131487, z: 0.03180399, w: 0.5803464}
   m_LocalPosition: {x: 100, y: 20, z: 14.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 5.11, y: -100, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.047, y: -109.004, z: -0.799}
+--- !u!114 &143768617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143768612}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c46405b5634584d459a7be11d31fd388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusObject: {fileID: 1041635102}
+--- !u!95 &143768618
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143768612}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb508acdccf0bba4da613f57d4075738, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &145260574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1891,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5728024022632403662, guid: 87fd8c9c1c4285249ba94b05c8da6d68,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2053,37 +2094,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dabc59e4f8c0cce4db08297946cbb572,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -329.6
+      value: -344
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dabc59e4f8c0cce4db08297946cbb572,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -107.8
+      value: -31
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dabc59e4f8c0cce4db08297946cbb572,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 204.4
+      value: 248
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dabc59e4f8c0cce4db08297946cbb572,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.948764
+      value: -0.920248
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dabc59e4f8c0cce4db08297946cbb572,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.27541846
+      value: -0.29402977
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dabc59e4f8c0cce4db08297946cbb572,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.10345942
+      value: -0.010280669
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dabc59e4f8c0cce4db08297946cbb572,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.11527178
+      value: 0.2580399
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dabc59e4f8c0cce4db08297946cbb572,
         type: 3}
@@ -2098,7 +2139,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dabc59e4f8c0cce4db08297946cbb572,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -168.865
+      value: -214.046
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: dabc59e4f8c0cce4db08297946cbb572,
         type: 3}
@@ -2631,10 +2672,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountOfNights: 10
-  nightLength: 200
+  nightLength: 5
   lightIntensity: 2
   dirLight: {fileID: 932664559}
   text: {fileID: 2136791709}
+  requiredFood: 0
   dayTime: 4
   dayCamera: {fileID: 143768615}
   nightCamera: {fileID: 46751018}

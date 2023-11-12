@@ -176,6 +176,7 @@ public class DayNightCycle : MonoBehaviour
     public void SwitchToDayCamera()
     {
         dayCamera.enabled = true;
+        dayCamera.GetComponent<Animator>().Play("DayCameraMovement");
         nightCamera.enabled = false;
         slider.gameObject.SetActive(true);
         RenderSettings.skybox = dayMaterial;
