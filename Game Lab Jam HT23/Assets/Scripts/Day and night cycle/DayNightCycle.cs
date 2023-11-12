@@ -40,6 +40,8 @@ public class DayNightCycle : MonoBehaviour
 
     [SerializeField] Slider slider;
 
+    [SerializeField] int requiredFood = 3;
+
     public bool Night
     { 
         get { return night; }
@@ -106,6 +108,21 @@ public class DayNightCycle : MonoBehaviour
             //Win();
             return;
         }
+        if (crewScript.DeadPeople > crewScript.CrewMates.Length/1.5f)
+        {
+            //Lost
+            SwitchToDayCamera();
+            return;
+        }
+        if (rat.GetComponent<Rat>().FoodCollected < requiredFood)
+        {
+            //Lost
+            SwitchToDayCamera();
+            Debug.Log("Lost Because Food");
+            return;
+        }
+
+
         // Makes sure this only happens once per night
         if (night)
         {
