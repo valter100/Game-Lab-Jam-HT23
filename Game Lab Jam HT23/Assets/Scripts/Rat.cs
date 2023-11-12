@@ -62,6 +62,7 @@ public class Rat : MonoBehaviour
         if(currentHat)
         {
             currentHat.gameObject.transform.position = hatPosition.position;
+            currentHat.transform.rotation = transform.rotation;
         }
     }
 
@@ -96,6 +97,9 @@ public class Rat : MonoBehaviour
 
     public void EquipHat(Hat newHat)
     {
+        if(currentHat)
+            Destroy(currentHat);
+
         GameObject SpawnedHat = Instantiate(newHat.gameObject, hatPosition.position, Quaternion.identity);
         Destroy(SpawnedHat.GetComponent<Hat>());
         currentHat = SpawnedHat;
