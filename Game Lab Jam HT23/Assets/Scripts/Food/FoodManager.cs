@@ -27,6 +27,8 @@ public class FoodManager : MonoBehaviour
         GetSpawnPoints();
         StartDay();
         foodList = new List<GameObject>();
+
+        maxAvailableFood = startAmountOfFood;
     }
 
     public void StartDay()
