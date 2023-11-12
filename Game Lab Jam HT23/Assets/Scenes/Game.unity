@@ -941,6 +941,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4299077516096688983, guid: 8bba0499560aa76498fcc3a770c6ce66,
+        type: 3}
+      propertyPath: musicSwitchDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4576328407638759465, guid: 8bba0499560aa76498fcc3a770c6ce66,
         type: 3}
       propertyPath: m_LocalPosition.x
