@@ -14,6 +14,7 @@ public class Rat : MonoBehaviour
     [SerializeField] float timeBetweenFleaPickup;
     float timeSinceLastFleaPickup;
     [SerializeField] ParticleSystem fleasSystem;
+    [SerializeField] ParticleSystem radiusSystem;
     [SerializeField] Crew crewScript;
 
 
@@ -23,6 +24,9 @@ public class Rat : MonoBehaviour
     float currentDistanceFlee = 0f;
     GameObject currentHat;
     Vector3 lastFramesPosition;
+
+    
+
 
     public float InfectionRadius
     {
@@ -38,6 +42,11 @@ public class Rat : MonoBehaviour
         lastFramesPosition = transform.position;
         infectionRadius = fleas;
         infectionRate = fleas;
+        var shape = radiusSystem.shape;
+        shape.radius = fleas;
+
+        var emission = fleasSystem.emission;
+
     }
 
     // Fleas increases when rat is walking
@@ -72,6 +81,9 @@ public class Rat : MonoBehaviour
         fleas += 0.5f;
         infectionRadius = fleas;
         infectionRate = fleas;
+
+        var shape = radiusSystem.shape;
+        shape.radius = fleas;
     }
 
     public void CheckFlea()
