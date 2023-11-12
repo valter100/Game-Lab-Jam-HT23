@@ -17,6 +17,8 @@ public class CrewMate : MonoBehaviour
 
     Material material;
 
+    private AudioSource audioSource;
+
 
     public float InfectionLevel
     {
@@ -33,10 +35,12 @@ public class CrewMate : MonoBehaviour
                 break;
             }
         }
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
         material.color = Color.Lerp(Color.white, Color.green, infectionLevel/100f);
+        audioSource.Play();
     }
 
     public void IncreaseInfection(float infection)
@@ -56,7 +60,11 @@ public class CrewMate : MonoBehaviour
             alive = false;
         }
 
-        
+
+    }
+    public void NPCTalk(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 
     private void OnTriggerStay(Collider other)
