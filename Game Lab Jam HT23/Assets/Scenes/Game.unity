@@ -611,6 +611,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1162953432855557779, guid: 20e8f2af899b8974f94a860b6f18722a,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162953432855557779, guid: 20e8f2af899b8974f94a860b6f18722a,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2963389547669870254, guid: 20e8f2af899b8974f94a860b6f18722a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1013,9 +1023,24 @@ PrefabInstance:
       objectReference: {fileID: 143768615}
     - target: {fileID: 8904701518301562598, guid: 8bba0499560aa76498fcc3a770c6ce66,
         type: 3}
+      propertyPath: foodSlider
+      value: 
+      objectReference: {fileID: 1107369708}
+    - target: {fileID: 8904701518301562598, guid: 8bba0499560aa76498fcc3a770c6ce66,
+        type: 3}
       propertyPath: nightCamera
       value: 
       objectReference: {fileID: 353792269}
+    - target: {fileID: 8904701518301562598, guid: 8bba0499560aa76498fcc3a770c6ce66,
+        type: 3}
+      propertyPath: nightLength
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904701518301562598, guid: 8bba0499560aa76498fcc3a770c6ce66,
+        type: 3}
+      propertyPath: requiredFood
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8904701518301562598, guid: 8bba0499560aa76498fcc3a770c6ce66,
         type: 3}
       propertyPath: dayNightImage

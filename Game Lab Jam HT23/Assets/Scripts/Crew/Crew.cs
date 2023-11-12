@@ -14,7 +14,7 @@ public class Crew : MonoBehaviour
 
     [SerializeField] AudioClip[] voiceClips;
     AudioClip nextClip;
-    bool isPlaying;
+    bool isPlaying = false;
     [SerializeField] float timeBetweenAudioCLips;
     float timeSinceLastAudioClip = 0;
 

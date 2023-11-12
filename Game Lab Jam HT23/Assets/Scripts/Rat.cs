@@ -45,6 +45,9 @@ public class Rat : MonoBehaviour
 
         var shape = radiusSystem.shape;
         shape.radius = fleas;
+
+        var emission = fleasSystem.emission;
+        emission.rateOverTime = fleas * 5;
     }
 
     // Fleas increases when rat is walking
@@ -89,6 +92,9 @@ public class Rat : MonoBehaviour
 
         var shape = radiusSystem.shape;
         shape.radius = fleas;
+
+        var emission = fleasSystem.emission;
+        emission.rateOverTime = fleas * 5;
     }
 
     public void CheckFlea()
@@ -127,6 +133,9 @@ public class Rat : MonoBehaviour
 
         var shape = radiusSystem.shape;
         shape.radius = fleas;
+
+        var emission = fleasSystem.emission;
+        emission.rateOverTime = fleas * 5;
     }
 
     public void EquipHat(Hat newHat)

@@ -102,6 +102,7 @@ public class DayNightCycle : MonoBehaviour
                 nightRotateValue = 180 / nights[currentNight].CurrentNightLength;
                 musicManager.ToggleMusic();
                 SwitchToNightCamera();
+                crewScript.StartPlay();
             }
 
             nights[currentNight].UpdateTime();
@@ -137,6 +138,7 @@ public class DayNightCycle : MonoBehaviour
         // Makes sure this only happens once per night
         if (night)
         {
+            crewScript.StopPlay();
             SwitchToDayCamera();
             musicManager.ToggleMusic();
             crewScript.HandleCrew();
