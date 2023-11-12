@@ -8,7 +8,7 @@ public class FoodManager : MonoBehaviour
     [SerializeField] GameObject[] foodPrefabs;
     [SerializeField] GameObject[] foodSpawnPoints;
     [SerializeField] Slider foodSlider;
-    private int maxAvailableFood = 0; //food available to pick up in current level/day
+
     [SerializeField] public int startAmountOfFood;
     [Range(0, 1)]
     [SerializeField] float difficulty;
@@ -17,7 +17,6 @@ public class FoodManager : MonoBehaviour
 
     public static FoodManager instance;
 
-    public float foodDifficulty = 0.1f;
 
     private void Awake()
     {
@@ -28,7 +27,7 @@ public class FoodManager : MonoBehaviour
         StartDay();
         foodList = new List<GameObject>();
 
-        maxAvailableFood = startAmountOfFood;
+        
     }
 
     public void StartDay()
@@ -73,7 +72,7 @@ public class FoodManager : MonoBehaviour
     }
     public void ResetFoodSlider() //set slider to max available food and value to 0
     {
-        foodSlider.maxValue = maxAvailableFood;
+        foodSlider.maxValue = startAmountOfFood;
         foodSlider.value = 0;
     }
 
@@ -86,12 +85,12 @@ public class FoodManager : MonoBehaviour
 
         foodList.Clear();
 
-        SpawnFood(startAmountOfFood, foodDifficulty);
+        SpawnFood(startAmountOfFood, difficulty);
     }
 
     public void UpdateDifficulty()
     {
-        foodDifficulty += 0.1f;
-        foodDifficulty = Mathf.Clamp(FoodManager.instance.foodDifficulty, 0.1f, 0.9f);
+        difficulty += 0.1f;
+        difficulty = Mathf.Clamp(FoodManager.instance.difficulty, 0.1f, 0.9f);
     }
 }

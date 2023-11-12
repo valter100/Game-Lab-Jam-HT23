@@ -691,6 +691,11 @@ PrefabInstance:
       propertyPath: distanceFlea
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 8215558895549027915, guid: 20e8f2af899b8974f94a860b6f18722a,
+        type: 3}
+      propertyPath: m_TagString
+      value: groundCheck
+      objectReference: {fileID: 0}
     - target: {fileID: 8547545157547084299, guid: 20e8f2af899b8974f94a860b6f18722a,
         type: 3}
       propertyPath: m_Name
@@ -1044,7 +1049,7 @@ PrefabInstance:
     - target: {fileID: 8904701518301562598, guid: 8bba0499560aa76498fcc3a770c6ce66,
         type: 3}
       propertyPath: nightLength
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8904701518301562598, guid: 8bba0499560aa76498fcc3a770c6ce66,
         type: 3}
@@ -1059,7 +1064,7 @@ PrefabInstance:
     - target: {fileID: 8904701518301562598, guid: 8bba0499560aa76498fcc3a770c6ce66,
         type: 3}
       propertyPath: amountOfNights
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
