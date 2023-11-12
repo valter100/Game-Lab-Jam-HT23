@@ -2386,7 +2386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountOfNights: 10
-  nightLength: 20
+  nightLength: 30
   lightIntensity: 2
   dirLight: {fileID: 932664559}
   text: {fileID: 2136791709}
@@ -2400,6 +2400,7 @@ MonoBehaviour:
   crewScript: {fileID: 1982918543}
   rat: {fileID: 1399682095}
   slider: {fileID: 228990039}
+  requiredFood: 3
 --- !u!4 &1982918542
 Transform:
   m_ObjectHideFlags: 0

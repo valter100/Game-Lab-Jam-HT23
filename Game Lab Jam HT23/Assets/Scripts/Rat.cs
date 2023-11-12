@@ -105,7 +105,7 @@ public class Rat : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             other.GetComponentInParent<FoodCollectible>().CollectFood();
-            pickupFoodSource.Play();
+            //pickupFoodSource.Play();
             foodCollected++;
         }
         if (other.CompareTag("Hat"))

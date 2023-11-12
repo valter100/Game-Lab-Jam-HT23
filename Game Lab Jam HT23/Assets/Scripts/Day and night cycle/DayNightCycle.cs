@@ -112,13 +112,14 @@ public class DayNightCycle : MonoBehaviour
         {
             //Lost
             SwitchToDayCamera();
+            ShowNightText("Ya lost");
             return;
         }
         if (rat.GetComponent<Rat>().FoodCollected < requiredFood)
         {
             //Lost
             SwitchToDayCamera();
-            Debug.Log("Lost Because Food");
+            ShowNightText("Ya lost");
             return;
         }
 
