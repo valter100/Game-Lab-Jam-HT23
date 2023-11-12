@@ -26,8 +26,9 @@ public class DayNightCycle : MonoBehaviour
 
     [SerializeField] Camera dayCamera;
     [SerializeField] Camera nightCamera;
-    [SerializeField] Material daySkybox;
-    [SerializeField] Material nightSkybox;
+
+    [SerializeField] Material dayMaterial;
+    [SerializeField] Material nightMaterial;
     Vector3 ratCameraLocation;
 
     [SerializeField] GameObject[] food;
@@ -38,7 +39,6 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField] GameObject rat;
 
     [SerializeField] Slider slider;
-    [SerializeField] MusicManager musicManager;
 
     public bool Night
     { 
@@ -87,7 +87,6 @@ public class DayNightCycle : MonoBehaviour
                 night = true;
 
                 SwitchToNightCamera();
-                musicManager.ToggleMusic();
             }
 
             nights[currentNight].UpdateTime();
@@ -104,7 +103,7 @@ public class DayNightCycle : MonoBehaviour
         if (currentNight == nights.Length - 1)
         {
             //Victory
-            ShowNightText("VICTORY!!");
+            //Win();
             return;
         }
         // Makes sure this only happens once per night
@@ -113,7 +112,7 @@ public class DayNightCycle : MonoBehaviour
             SwitchToDayCamera();
             crewScript.HandleCrew();
             ShowNightText("Night: " + (currentNight + 2).ToString());
-            musicManager.ToggleMusic();
+            RenderSettings.skybox = dayMaterial;
         }
 
         dayTime -= Time.deltaTime;
@@ -123,7 +122,6 @@ public class DayNightCycle : MonoBehaviour
             currentNight++;
         }
         slider.value = currentNight + 1;
-        RenderSettings.skybox = daySkybox;
     }
 
     public void ShowNightText(string currentNight)
@@ -133,6 +131,8 @@ public class DayNightCycle : MonoBehaviour
 
         crewScript.PrintCrew();
         dayTime = dayTimeReset;
+
+
 
         night = false;
     }
@@ -146,8 +146,6 @@ public class DayNightCycle : MonoBehaviour
         nightCamera.enabled = true;
         dayCamera.enabled = false;
         slider.gameObject.SetActive(false);
-
-        RenderSettings.skybox = nightSkybox;
     }
 
     public void SwitchToDayCamera()
