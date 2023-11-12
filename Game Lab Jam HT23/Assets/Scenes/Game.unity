@@ -735,6 +735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4731629426349896239, guid: 20e8f2af899b8974f94a860b6f18722a,
         type: 3}
+      propertyPath: fleas
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731629426349896239, guid: 20e8f2af899b8974f94a860b6f18722a,
+        type: 3}
       propertyPath: crewScript
       value: 
       objectReference: {fileID: 1982918543}

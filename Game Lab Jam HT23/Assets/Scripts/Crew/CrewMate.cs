@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Crew;
+using static StylizedWater2.UI;
+using Material = UnityEngine.Material;
 
 public class CrewMate : MonoBehaviour
 {
@@ -13,16 +15,28 @@ public class CrewMate : MonoBehaviour
     float infectionCooldown = 0.2f;
     float infectionCooldownReset = 0.2f;
 
+    Material material;
+
 
     public float InfectionLevel
     {
         get { return infectionLevel; }
     }
 
-    // Update is called once per frame
+    private void Start()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).gameObject.activeSelf)
+            {
+                material = transform.GetChild(i).GetComponent<Renderer>().material;
+                break;
+            }
+        }
+    }
     void Update()
     {
-        
+        material.color = Color.Lerp(Color.white, Color.green, infectionLevel/100f);
     }
 
     public void IncreaseInfection(float infection)
