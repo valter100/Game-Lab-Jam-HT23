@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,11 @@ public class FoodManager : MonoBehaviour
     [Range(0, 1)]
     [SerializeField] float difficulty;
 
+    List<GameObject> foodList;
+
     public static FoodManager instance;
+
+    public float foodDifficulty = 0.4f;
 
     private void Awake()
     {
@@ -21,11 +26,11 @@ public class FoodManager : MonoBehaviour
 
         GetSpawnPoints();
         StartDay();
+        foodList = new List<GameObject>();
     }
 
     public void StartDay()
     {
-        SpawnFood(startAmountOfFood, 0.4f);
         ResetFoodSlider();
     }
 
@@ -57,7 +62,7 @@ public class FoodManager : MonoBehaviour
             }
 
             takenSpots[rs] = 1;
-            Instantiate(foodPrefabs[rf], foodSpawnPoints[rs].transform.position, Quaternion.identity);
+            foodList.Add(Instantiate(foodPrefabs[rf], foodSpawnPoints[rs].transform.position, Quaternion.identity));
             maxAvailableFood++;
         }
     }
@@ -69,5 +74,23 @@ public class FoodManager : MonoBehaviour
     {
         foodSlider.maxValue = maxAvailableFood;
         foodSlider.value = 0;
+    }
+
+    public void ResetAndSpawnFood()
+    {
+        foreach (var food in foodList)
+        {
+            Destroy(food);
+        }
+
+        foodList.Clear();
+
+        SpawnFood(startAmountOfFood, foodDifficulty);
+    }
+
+    public void UpdateDifficulty()
+    {
+        foodDifficulty += 0.1f;
+        foodDifficulty = Mathf.Clamp(FoodManager.instance.foodDifficulty, 0.3f, 0.9f);
     }
 }
