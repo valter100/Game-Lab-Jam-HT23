@@ -8,7 +8,7 @@ public class Rat : MonoBehaviour
     [SerializeField] float infectionRadius = 5f;
     [SerializeField] float infectionRate = 5f;
 
-    [SerializeField] float fleas;
+    [SerializeField] float fleas = 1.5f;
     [SerializeField] int foodCollected;
 
     [SerializeField] float timeBetweenFleaPickup;
@@ -36,7 +36,8 @@ public class Rat : MonoBehaviour
     void Start()
     {
         lastFramesPosition = transform.position;
-        fleas = infectionRadius;
+        infectionRadius = fleas;
+        infectionRate = fleas;
     }
 
     // Fleas increases when rat is walking
@@ -68,8 +69,9 @@ public class Rat : MonoBehaviour
 
     public void PickupFlea()
     {
-        fleas++;
+        fleas += 0.5f;
         infectionRadius = fleas;
+        infectionRate = fleas;
     }
 
     public void CheckFlea()
