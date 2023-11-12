@@ -9,7 +9,7 @@ public class Rat : MonoBehaviour
     [SerializeField] float infectionRate = 5f;
 
     [SerializeField] float fleas;
-    [SerializeField] int foodCollected;
+    [SerializeField] int foodCollected = 0;
 
     [SerializeField] float timeBetweenFleaPickup;
     float timeSinceLastFleaPickup;
@@ -83,6 +83,7 @@ public class Rat : MonoBehaviour
     {
         fleas += 0.5f;
         infectionRadius = fleas;
+        infectionRate = fleas;
 
         var shape = radiusSystem.shape;
         shape.radius = fleas;
@@ -106,13 +107,23 @@ public class Rat : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             other.GetComponentInParent<FoodCollectible>().CollectFood();
-            //pickupFoodSource.Play();
+            pickupFoodSource.Play();
             foodCollected++;
         }
         if (other.CompareTag("Hat"))
         {
             pickupHatSource.Play();
         }
+    }
+
+    public void RemoveFlea(float amount)
+    {
+        fleas -= amount;
+        infectionRadius = fleas;
+        infectionRate = fleas;
+
+        var shape = radiusSystem.shape;
+        shape.radius = fleas;
     }
 
     public void EquipHat(Hat newHat)

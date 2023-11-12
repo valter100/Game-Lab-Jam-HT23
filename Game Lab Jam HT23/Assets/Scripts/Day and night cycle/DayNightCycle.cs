@@ -91,6 +91,10 @@ public class DayNightCycle : MonoBehaviour
         {
             if (!night)
             {
+                FoodManager.instance.ResetAndSpawnFood();
+                FoodManager.instance.UpdateDifficulty();
+                rat.GetComponent<Rat>().FoodCollected = 0;
+                FoodManager.instance.ResetFoodSlider();
                 text.enabled = false;
                 crewScript.DisableCrewText();
                 night = true;
@@ -117,24 +121,20 @@ public class DayNightCycle : MonoBehaviour
             //Win();
             return;
         }
+        if (crewScript.DeadPeople > crewScript.CrewMates.Length / 1.5f)
+        {
+            //lost
+            return;
+        }
 
+        if (rat.GetComponent<Rat>().FoodCollected < requiredFood)
+        {
+            return;
+        }
 
         // Makes sure this only happens once per night
         if (night)
         {
-            if (crewScript.DeadPeople > crewScript.CrewMates.Length / 1.5f)
-            {
-                //lost
-                return;
-            }
-
-            if (rat.GetComponent<Rat>().FoodCollected < requiredFood)
-            {
-                Debug.Log("You Lost");
-                return;
-            }
-            rat.GetComponent<Rat>().FoodCollected = 0;
-            foodSlider.value = 0;
             SwitchToDayCamera();
             musicManager.ToggleMusic();
             crewScript.HandleCrew();

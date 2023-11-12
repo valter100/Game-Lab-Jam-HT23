@@ -51,9 +51,10 @@ public class CrewMate : MonoBehaviour
             infectionCooldown -= Time.deltaTime;
         }
 
-        if (infectionLevel >= 100)
+        if (infectionLevel >= 100 && alive)
         {
             alive = false;
+            GameObject.FindGameObjectWithTag("Rat").GetComponent<Rat>().RemoveFlea(0.5f);
         }
 
         
