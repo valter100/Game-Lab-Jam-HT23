@@ -17,6 +17,8 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField] Light dirLight;
     [SerializeField] TextMeshProUGUI text;
 
+    [SerializeField] int requiredFood;
+
     bool night = true;
 
     [SerializeField] float dayTime = 2f;
@@ -112,6 +114,18 @@ public class DayNightCycle : MonoBehaviour
         {
             //Victory
             //Win();
+            return;
+        }
+
+        if (crewScript.DeadPeople > crewScript.CrewMates.Length /1.5f)
+        {
+            //lost
+            return;
+        }
+
+        if (rat.GetComponent<Rat>().FoodCollected < requiredFood)
+        {
+            //lost
             return;
         }
         // Makes sure this only happens once per night

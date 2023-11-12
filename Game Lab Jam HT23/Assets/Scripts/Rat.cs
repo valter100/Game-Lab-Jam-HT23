@@ -29,13 +29,9 @@ public class Rat : MonoBehaviour
     [SerializeField] int currentHatIndex;
     Vector3 lastFramesPosition;
 
-    public float InfectionRadius
+    public int FoodCollected
     {
-        get { return infectionRadius; }
-    }
-    public float InfectionRate
-    {
-        get { return infectionRate; }
+        get { return foodCollected; }
     }
 
     void Start()
@@ -56,6 +52,10 @@ public class Rat : MonoBehaviour
     {
         for (int i = 0; i < crewScript.CrewMates.Length; i++)
         {
+            if ((crewScript.CrewMates[i].GetComponent<Collider>().bounds.size.y + transform.position.y) < crewScript.CrewMates[i].transform.position.y)
+            {
+                continue;
+            }
             float distance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(crewScript.CrewMates[i].transform.position.x, 0, crewScript.CrewMates[i].transform.position.z));
             if (distance < (infectionRadius / 2))
             {
@@ -105,7 +105,7 @@ public class Rat : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             other.GetComponentInParent<FoodCollectible>().CollectFood();
-            pickupFoodSource.Play();
+            //pickupFoodSource.Play();
             foodCollected++;
         }
         if (other.CompareTag("Hat"))
