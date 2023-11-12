@@ -2400,6 +2400,10 @@ MonoBehaviour:
   crewScript: {fileID: 1982918543}
   rat: {fileID: 1399682095}
   slider: {fileID: 228990039}
+<<<<<<< Updated upstream
+=======
+  foodRequired: 0
+>>>>>>> Stashed changes
 --- !u!4 &1982918542
 Transform:
   m_ObjectHideFlags: 0

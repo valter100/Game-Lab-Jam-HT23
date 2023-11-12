@@ -5,11 +5,11 @@ using UnityEngine;
 public class Rat : MonoBehaviour
 {
 
-    [SerializeField] float infectionRadius = 5f;
-    [SerializeField] float infectionRate = 5f;
+    float infectionRadius = 1f;
+    float infectionRate = 1f;
 
     [SerializeField] float fleas;
-    [SerializeField] int foodCollected;
+    [SerializeField] int foodCollected = 0;
 
     [SerializeField] float timeBetweenFleaPickup;
     float timeSinceLastFleaPickup;
@@ -29,13 +29,9 @@ public class Rat : MonoBehaviour
     [SerializeField] int currentHatIndex;
     Vector3 lastFramesPosition;
 
-    public float InfectionRadius
+    public int FoodCollected
     {
-        get { return infectionRadius; }
-    }
-    public float InfectionRate
-    {
-        get { return infectionRate; }
+        get { return foodCollected; }
     }
 
     void Start()
