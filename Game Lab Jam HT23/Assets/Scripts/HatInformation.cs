@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class HatInformation : MonoBehaviour
 {
-    List<GameObject> hats;
+    List<string> hatNames;
 
     private void Start()
     {
-        hats = new List<GameObject>(); 
+        hatNames = new List<string>(); 
 
-        if(hats.Count > 0)
+        if(hatNames.Count > 0)
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
@@ -18,9 +18,8 @@ public class HatInformation : MonoBehaviour
 
     public void AddHat(GameObject hat)
     {
-        DontDestroyOnLoad(hat.gameObject);
-        hats.Add(hat);
+        hatNames.Add(hat.name);
     }
 
-    public List<GameObject> GetHats() { return hats; }
+    public List<string> GetHatNames() { return hatNames; }
 }

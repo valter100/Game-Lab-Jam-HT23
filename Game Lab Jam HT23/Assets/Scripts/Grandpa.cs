@@ -5,19 +5,28 @@ using UnityEngine;
 public class Grandpa : MonoBehaviour
 {
     HatInformation hatInfo;
-    List<GameObject> hats;
+    [SerializeField] List<string> hatNames;
+    [SerializeField] List<GameObject> hats;
     [SerializeField] List<Transform> hatPositions;
 
     // Start is called before the first frame update
     void Start()
     {
         hatInfo = FindObjectOfType<HatInformation>(); 
-        hats = hatInfo.GetHats();
+        hatNames = hatInfo.GetHatNames();
         int index = 0;
-        foreach(GameObject hat in hats)
+
+        foreach(string hatName in hatNames)
         {
-            hat.transform.position = hatPositions[index].position;
-            hat.transform.rotation = hatPositions[index].rotation;
+            foreach(GameObject hat in hats)
+            {
+                if(hatName == hat.name)
+                {
+                    Instantiate(hat, hatPositions[index]);
+                    index++;
+                    continue;
+                }
+            }
             index++;
         }
     }

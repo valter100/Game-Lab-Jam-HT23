@@ -4123,6 +4123,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9f9c2994fa0fb499b8227efb1cacdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hatNames:
+  - Top Hat
+  - Santa Hat
+  - crown
+  - LuffyStrawHat
+  - pirate hat
+  - Propeller Hat
+  hats:
+  - {fileID: 8641704156160640355, guid: 0dbd57b602be6124f9b22be4181ed500, type: 3}
+  - {fileID: 4630841468604905228, guid: 27671a1dd3413f24ca81e8dfc0c0c5a5, type: 3}
+  - {fileID: 5821492104004209654, guid: 80e3811cbac98864c9df38f6a46599cd, type: 3}
+  - {fileID: 3073277181833754882, guid: 1ae889ba1e4840844a3b92d02207da4f, type: 3}
+  - {fileID: 8116028571618376190, guid: 7dc3ec68273ebe243887cd6e7b25ee90, type: 3}
+  - {fileID: 5355963465521202593, guid: a17b38d6a4449aa41817aad500980b6c, type: 3}
   hatPositions:
   - {fileID: 1951208311}
   - {fileID: 2054941610}
