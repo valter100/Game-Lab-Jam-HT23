@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Crew;
-using static StylizedWater2.UI;
 using Material = UnityEngine.Material;
 
 public class CrewMate : MonoBehaviour

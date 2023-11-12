@@ -28,6 +28,7 @@ public class Rat : MonoBehaviour
     [SerializeField] int hatAmount;
     [SerializeField] int currentHatIndex;
     [SerializeField] GameObject hatText;
+    HatInformation hatInfo;
     Vector3 lastFramesPosition;
 
     public int FoodCollected
@@ -42,6 +43,7 @@ public class Rat : MonoBehaviour
         infectionRadius = fleas;
         infectionRate = fleas;
         hats = new List<GameObject>();
+        hatInfo = FindObjectOfType<HatInformation>();
 
         var shape = radiusSystem.shape;
         shape.radius = fleas;
@@ -154,6 +156,8 @@ public class Rat : MonoBehaviour
         Destroy(SpawnedHat.GetComponent<Hat>());
         Destroy(SpawnedHat.GetComponent<Collider>());
         hats.Add(SpawnedHat);
+        GameObject hatCopy = SpawnedHat;
+        hatInfo.AddHat(hatCopy);
 
         hatAmount++;
         currentHatIndex = hatAmount - 1;
