@@ -130,7 +130,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1537516605}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -1822,6 +1822,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4713155151897539969, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 656.0398
+      objectReference: {fileID: 0}
     - target: {fileID: 4911654158604810724, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1831,6 +1836,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349271591203380545, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349271591203380545, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349271591203380545, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6349271591203380545, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
         type: 3}
@@ -1936,6 +1956,23 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631083060413721748, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_text
+      value: '
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631083060413721748, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631083060413721748, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
