@@ -32,6 +32,7 @@ public class Rat : MonoBehaviour
     public int FoodCollected
     {
         get { return foodCollected; }
+        set { foodCollected = value; }
     }
 
     void Start()
