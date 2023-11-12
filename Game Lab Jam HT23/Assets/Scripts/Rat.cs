@@ -124,6 +124,7 @@ public class Rat : MonoBehaviour
 
         GameObject SpawnedHat = Instantiate(newHat.gameObject, hatPosition.position, Quaternion.identity);
         Destroy(SpawnedHat.GetComponent<Hat>());
+        Destroy(SpawnedHat.GetComponent<Collider>());
         hats.Add(SpawnedHat);
 
         hatAmount++;

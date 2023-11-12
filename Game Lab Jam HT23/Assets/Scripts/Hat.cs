@@ -14,4 +14,5 @@ public class Hat : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }

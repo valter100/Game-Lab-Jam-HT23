@@ -32,18 +32,21 @@ public class DayNightCycle : MonoBehaviour
     Vector3 ratCameraLocation;
 
     [SerializeField] GameObject[] food;
-    
+
     [SerializeField] Vector3[] spawnPoints;
 
     [SerializeField] Crew crewScript;
     [SerializeField] GameObject rat;
 
     [SerializeField] Slider slider;
+    [SerializeField] Image dayNightImage;
+    float dayRotateValue;
+    float nightRotateValue;
 
     [SerializeField] int requiredFood = 3;
 
     public bool Night
-    { 
+    {
         get { return night; }
     }
 
@@ -60,7 +63,7 @@ public class DayNightCycle : MonoBehaviour
         }
         ratCameraLocation = rat.transform.position;
 
-
+        dayRotateValue = 180 / dayTime;
         SwitchToDayCamera();
     }
 
@@ -75,6 +78,7 @@ public class DayNightCycle : MonoBehaviour
         {
             ShowNightText("Night: " + "1");
             firstDayTimer -= Time.deltaTime;
+            dayNightImage.transform.Rotate(new Vector3(0, 0, dayRotateValue * Time.deltaTime));
             dirLight.intensity = Mathf.Lerp(0, lightIntensity, firstDayTimer / firstDayTimerReset);
             return;
         }
@@ -87,11 +91,13 @@ public class DayNightCycle : MonoBehaviour
                 text.enabled = false;
                 crewScript.DisableCrewText();
                 night = true;
+                nightRotateValue = 180 / nights[currentNight].CurrentNightLength;
 
                 SwitchToNightCamera();
             }
 
             nights[currentNight].UpdateTime();
+            dayNightImage.transform.Rotate(new Vector3(0, 0, nightRotateValue * Time.deltaTime));
             dirLight.intensity = Mathf.Lerp(lightIntensity, 0, nights[currentNight].CurrentNightLength / nightLength);
         }
         else
@@ -134,6 +140,7 @@ public class DayNightCycle : MonoBehaviour
         }
 
         dayTime -= Time.deltaTime;
+        dayNightImage.transform.Rotate(new Vector3(0, 0, dayRotateValue * Time.deltaTime));
         dirLight.intensity = Mathf.Lerp(0, lightIntensity, dayTime / firstDayTimerReset);
         if (dayTime < 0)
         {
