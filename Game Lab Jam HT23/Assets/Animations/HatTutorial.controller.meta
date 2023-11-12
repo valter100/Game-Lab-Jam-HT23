@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Game Lab Jam HT23/Assets/Animations/HatTutorial.controller.meta
 guid: de6d8bfd07f86ba4992905a341b87b98
 NativeFormatImporter:
+========
+guid: da738e7716a7c424b8eba26f208307b6
+DefaultImporter:
+>>>>>>>> Props-Malin:Game Lab Jam HT23/Assets/Characters/Lowpoly_Environments/SRP/PT_Nature_Free_URP_10.10.1.unitypackage.meta
   externalObjects: {}
   mainObjectFileID: 9100000
   userData: 

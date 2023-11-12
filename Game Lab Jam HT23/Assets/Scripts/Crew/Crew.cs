@@ -13,7 +13,8 @@ public class Crew : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
 
     [SerializeField] AudioClip[] voiceClips;
-    AudioClip? nextClip;
+    AudioClip nextClip;
+    bool isPlaying;
     [SerializeField] float timeBetweenAudioCLips;
     float timeSinceLastAudioClip = 0;
 
@@ -40,7 +41,8 @@ public class Crew : MonoBehaviour
 
     void Update()
     {
-        timeSinceLastAudioClip += Time.deltaTime;
+        if (isPlaying)
+            timeSinceLastAudioClip += Time.deltaTime;
         if (timeSinceLastAudioClip > timeBetweenAudioCLips)
         {
             timeSinceLastAudioClip = 0;
@@ -56,7 +58,7 @@ public class Crew : MonoBehaviour
 
             if (nextClip == null)
             {
-                int rnd; 
+                int rnd;
 
                 do
                 {
@@ -79,6 +81,9 @@ public class Crew : MonoBehaviour
 
         }
     }
+
+    public void StartPlay() { isPlaying = true; }
+    public void StopPlay() { isPlaying = false; }
 
     public void PrintCrew()
     {
