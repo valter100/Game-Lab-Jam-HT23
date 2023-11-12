@@ -988,6 +988,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564057592}
   m_CullTransparentMesh: 1
+--- !u!114 &713179191 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5167166560107946566, guid: 87fd8c9c1c4285249ba94b05c8da6d68,
+    type: 3}
+  m_PrefabInstance: {fileID: 1203844887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ad17b312d39e24cbf62a72fce40e9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &932664557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,6 +2427,7 @@ MonoBehaviour:
   rat: {fileID: 1399682095}
   slider: {fileID: 228990039}
   dayNightImage: {fileID: 1323443619}
+  musicManager: {fileID: 713179191}
 --- !u!4 &1982918542
 Transform:
   m_ObjectHideFlags: 0
