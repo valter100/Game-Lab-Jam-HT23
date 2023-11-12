@@ -63,7 +63,7 @@ public class DayNightCycle : MonoBehaviour
         for (int i = 0; i < amountOfNights; i++)
         {
             nights[i] = new Night();
-            nights[i].CurrentNightLength = nightLength;
+            nights[i].CurrentNightLength = nightLength * (i * 2);
         }
         ratCameraLocation = rat.transform.position;
 

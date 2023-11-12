@@ -17,7 +17,7 @@ public class FoodManager : MonoBehaviour
 
     public static FoodManager instance;
 
-    public float foodDifficulty = 0.4f;
+    public float foodDifficulty = 0.1f;
 
     private void Awake()
     {
@@ -63,7 +63,6 @@ public class FoodManager : MonoBehaviour
 
             takenSpots[rs] = 1;
             foodList.Add(Instantiate(foodPrefabs[rf], foodSpawnPoints[rs].transform.position, Quaternion.identity));
-            maxAvailableFood++;
         }
     }
     public void UpdateSliderOnFoodPickup() //increase value of slider when food is picked up
@@ -91,6 +90,6 @@ public class FoodManager : MonoBehaviour
     public void UpdateDifficulty()
     {
         foodDifficulty += 0.1f;
-        foodDifficulty = Mathf.Clamp(FoodManager.instance.foodDifficulty, 0.3f, 0.9f);
+        foodDifficulty = Mathf.Clamp(FoodManager.instance.foodDifficulty, 0.1f, 0.9f);
     }
 }

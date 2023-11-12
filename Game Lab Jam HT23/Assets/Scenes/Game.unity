@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18594825, g: 0.3657234, b: 0.44346222, a: 1}
+  m_IndirectSpecularColor: {r: 0.18508667, g: 0.3654263, b: 0.45089793, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1641,6 +1641,16 @@ PrefabInstance:
       propertyPath: foodSlider
       value: 
       objectReference: {fileID: 1107369708}
+    - target: {fileID: 5075630278882532077, guid: a7443075d9f5bf44ea8f6a9b0268f953,
+        type: 3}
+      propertyPath: foodDifficulty
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075630278882532077, guid: a7443075d9f5bf44ea8f6a9b0268f953,
+        type: 3}
+      propertyPath: startAmountOfFood
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7932599804597277911, guid: a7443075d9f5bf44ea8f6a9b0268f953,
         type: 3}
       propertyPath: m_Name
@@ -1801,6 +1811,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -379
+      objectReference: {fileID: 0}
+    - target: {fileID: 825033311247921407, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -78.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 825033311247921407, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.999992
       objectReference: {fileID: 0}
     - target: {fileID: 897525351926687275, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
         type: 3}
@@ -1973,6 +1993,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontStyle
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030469970626979578, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_Value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030469970626979578, guid: 0556f5f8731ce8741b0ba9f8927ad8ce,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
