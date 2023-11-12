@@ -43,7 +43,7 @@ public class DayNightCycle : MonoBehaviour
     float dayRotateValue;
     float nightRotateValue;
 
-    [SerializeField] int requiredFood = 3;
+    [SerializeField] MusicManager musicManager;
 
     public bool Night
     {
@@ -92,7 +92,7 @@ public class DayNightCycle : MonoBehaviour
                 crewScript.DisableCrewText();
                 night = true;
                 nightRotateValue = 180 / nights[currentNight].CurrentNightLength;
-
+                musicManager.ToggleMusic();
                 SwitchToNightCamera();
             }
 
@@ -114,26 +114,11 @@ public class DayNightCycle : MonoBehaviour
             //Win();
             return;
         }
-        if (crewScript.DeadPeople > crewScript.CrewMates.Length/1.5f)
-        {
-            //Lost
-            SwitchToDayCamera();
-            ShowNightText("Ya lost");
-            return;
-        }
-        if (rat.GetComponent<Rat>().FoodCollected < requiredFood)
-        {
-            //Lost
-            SwitchToDayCamera();
-            ShowNightText("Ya lost");
-            return;
-        }
-
-
         // Makes sure this only happens once per night
         if (night)
         {
             SwitchToDayCamera();
+            musicManager.ToggleMusic();
             crewScript.HandleCrew();
             ShowNightText("Night: " + (currentNight + 2).ToString());
             RenderSettings.skybox = dayMaterial;
@@ -177,7 +162,6 @@ public class DayNightCycle : MonoBehaviour
     {
         dayCamera.enabled = true;
         nightCamera.enabled = false;
-
         slider.gameObject.SetActive(true);
     }
 }
