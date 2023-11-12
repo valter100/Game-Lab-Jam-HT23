@@ -83,6 +83,7 @@ public class Rat : MonoBehaviour
     public void PickupFlea()
     {
         fleas += 0.5f;
+        //fleas = Mathf.Clamp(fleas, 1f, 20f);
         infectionRadius = fleas;
         infectionRate = fleas;
 
@@ -120,6 +121,7 @@ public class Rat : MonoBehaviour
     public void RemoveFlea(float amount)
     {
         fleas -= amount;
+        fleas = Mathf.Clamp(fleas, 1f, 100f);
         infectionRadius = fleas;
         infectionRate = fleas;
 
