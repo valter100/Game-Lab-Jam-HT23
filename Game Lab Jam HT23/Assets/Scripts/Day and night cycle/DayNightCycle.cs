@@ -17,7 +17,7 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField] Light dirLight;
     [SerializeField] TextMeshProUGUI text;
 
-    [SerializeField] int requiredFood;
+    [SerializeField] int requiredFood = 3;
 
     bool night = true;
 
@@ -41,6 +41,7 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField] GameObject rat;
 
     [SerializeField] Slider slider;
+    [SerializeField] Slider foodSlider;
     [SerializeField] Image dayNightImage;
     float dayRotateValue;
     float nightRotateValue;
@@ -90,6 +91,10 @@ public class DayNightCycle : MonoBehaviour
         {
             if (!night)
             {
+                FoodManager.instance.ResetAndSpawnFood();
+                FoodManager.instance.UpdateDifficulty();
+                rat.GetComponent<Rat>().FoodCollected = 0;
+                FoodManager.instance.ResetFoodSlider();
                 text.enabled = false;
                 crewScript.DisableCrewText();
                 night = true;
@@ -116,8 +121,7 @@ public class DayNightCycle : MonoBehaviour
             //Win();
             return;
         }
-
-        if (crewScript.DeadPeople > crewScript.CrewMates.Length /1.5f)
+        if (crewScript.DeadPeople > crewScript.CrewMates.Length / 1.5f)
         {
             //lost
             return;
@@ -125,9 +129,9 @@ public class DayNightCycle : MonoBehaviour
 
         if (rat.GetComponent<Rat>().FoodCollected < requiredFood)
         {
-            //lost
             return;
         }
+
         // Makes sure this only happens once per night
         if (night)
         {
