@@ -170,6 +170,7 @@ public class DayNightCycle : MonoBehaviour
         nightCamera.enabled = true;
         dayCamera.enabled = false;
         slider.gameObject.SetActive(false);
+        RenderSettings.skybox = nightMaterial;
     }
 
     public void SwitchToDayCamera()
@@ -177,5 +178,6 @@ public class DayNightCycle : MonoBehaviour
         dayCamera.enabled = true;
         nightCamera.enabled = false;
         slider.gameObject.SetActive(true);
+        RenderSettings.skybox = dayMaterial;
     }
 }
