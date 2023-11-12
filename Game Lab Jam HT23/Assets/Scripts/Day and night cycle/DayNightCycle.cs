@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DayNightCycle : MonoBehaviour
@@ -118,17 +119,18 @@ public class DayNightCycle : MonoBehaviour
         if (currentNight == nights.Length - 1)
         {
             //Victory
-            //Win();
+            SceneManager.LoadScene(5);
             return;
         }
         if (crewScript.DeadPeople > crewScript.CrewMates.Length / 1.5f)
         {
-            //lost
+            SceneManager.LoadScene(4);
             return;
         }
 
         if (rat.GetComponent<Rat>().FoodCollected < requiredFood)
         {
+            SceneManager.LoadScene(3);
             return;
         }
 
